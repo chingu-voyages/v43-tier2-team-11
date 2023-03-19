@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap");
+
+/////MIXIN
+$color-primary-dark: #667080;
+$color-border: #d5dfe9;
+
+/////RESET
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/////STYLES
+.form {
+  font-family: "Urbanist";
+  color: $color-primary-dark;
+
+  //size
+  font-size: 17px;
+  padding: 40px 16px;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+
+  //size
+  margin-bottom: 19px;
+
+  &__form {
+    border: 1px solid $color-border;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    //size
+    border-radius: 13.7px;
+  }
+
+  &__input {
+    background-color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+
+    //size
+    height: 50px;
+    width: 225px;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin: 0;
+
+    //size
+    font-size: 15px;
+  }
+
+  &__border {
+    color: $color-border;
+
+    //size
+    margin-top: 6px;
+  }
+
+  &__search-icon {
+    stroke: $color-primary-dark;
+
+    //size
+    height: 24px;
+    margin: 0 15px;
+  }
+
+  &__cancel-button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+
+  &__discovery-icon {
+    stroke: $color-primary-dark;
+    margin: 0 7px;
+  }
+
+  &__suggested {
+    cursor: pointer;
+  }
+
+  &__ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__ul li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+  }
+}
