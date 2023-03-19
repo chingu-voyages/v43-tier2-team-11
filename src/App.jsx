@@ -1,9 +1,11 @@
-import Form from "./Form";
+//import Form from "./Form";
+import Map from "./Map";
 
 function App() {
   return (
     <>
-      <Form />
+      {/* <Form /> */}
+      <Map />
     </>
   );
 }
