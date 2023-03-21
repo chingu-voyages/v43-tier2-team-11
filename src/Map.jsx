@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./Map.module.scss";
 
 const DUMMY_COORDINATES = [
@@ -38,53 +38,35 @@ const DUMMY_COORDINATES = [
 
 const DUMMY_LOCATION = { lat: 35.66756203584793, long: 139.7077023534186 };
 
-let isInitial = true;
-
 const Map = () => {
   const { lat, long } = DUMMY_LOCATION;
   const coords = [lat, long];
   const mapZoomLevel = 15;
 
-  //somehow this useEffect is executed twice...
-  //added "isInitial" to avoid error but this has to be fixed
-  useEffect(() => {
-    if (isInitial) {
-      const map = L.map("map").setView(coords, mapZoomLevel);
-      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map);
+  const markers = DUMMY_COORDINATES.map((el) => {
+    const { lat, long } = el.coords;
+    const coords = [lat, long];
 
-      DUMMY_COORDINATES.map((el) => {
-        const { lat, long } = el.coords;
-        const coords = [lat, long];
-        const name = el.name;
-
-        L.marker(coords)
-          .addTo(map)
-          .bindPopup(
-            L.popup({
-              maxWidth: 250,
-              minWidth: 100,
-              autoClose: false,
-              closeOnClick: false,
-            })
-          )
-          .setPopupContent(name)
-          .openPopup();
-      });
-    }
-
-    isInitial = false;
-
-    console.log("Page Loaded");
-  }, []);
+    return (
+      <Marker position={coords} key={el.id}>
+        <Popup>{el.name}</Popup>
+      </Marker>
+    );
+  });
 
   return (
-    <>
-      <div id="map" className={classes.map}></div>
-    </>
+    <MapContainer
+      center={coords}
+      zoom={mapZoomLevel}
+      scrollWheelZoom={false}
+      className={classes.map}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {markers}
+    </MapContainer>
   );
 };
 
