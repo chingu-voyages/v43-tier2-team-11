@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import Search from "./assets/Search";
-import Discovery from "./assets/Discovery";
+import Search from "../assets/Search";
+import Discovery from "../assets/Discovery";
 import classes from "./Form.module.scss";
 
 //later replace w/ real data

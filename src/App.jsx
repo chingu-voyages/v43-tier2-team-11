@@ -1,13 +1,35 @@
-//import Form from "./Form";
-import Map from "./Map";
+//router
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//pages
+import LandingPage from "./pages/LandingPage";
+import ErrorPage from "./pages/ErrorPage";
+import MapPage from "./pages/MapPage";
+import Form from "./components/Form";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <LandingPage />,
+      },
+      {
+        path: "/map",
+        element: <MapPage />,
+      },
+      {
+        path: "/form",
+        element: <Form />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <>
-      {/* <Form /> */}
-      <Map />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
