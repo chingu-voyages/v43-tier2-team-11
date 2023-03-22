@@ -3,12 +3,32 @@
     padding: 0;
 }
 
+.container {
+    width: 750px;
+    display: flex;
+    height: 350px;
+    background-color: rgba(0,0,0,0.1);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-left: 200px;
+    border-radius: 10px;
+
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
 .restaurant-detail {
-    background-color: gray;
     display: flex;
     flex-direction: column;
-    color: white;  
-    justify-content: space-around;
+    color: black;  
+    gap: 10px;
     height: 70vh;
-    width: 40vh;
-  }
+    width: 380px;
+    height: 300px;
+  } 
