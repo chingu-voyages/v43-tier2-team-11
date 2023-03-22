@@ -9,6 +9,8 @@ import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStarHalfAlt as halfStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { faUtensils as faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
+
 
 const RestaurantDetail = ({ restaurant }) => {
   const mockData = {
@@ -27,16 +29,20 @@ const RestaurantDetail = ({ restaurant }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= reviewScore) {
-      stars.push(<FontAwesomeIcon key={i} icon={solidStar} style={{ color: "yellow" }}/>);
+      stars.push(<FontAwesomeIcon key={i} icon={solidStar} style={{ color: "#FFDF00" }}/>);
     } else if (i === Math.ceil(reviewScore) && reviewScore % 1 !== 0) {
-      stars.push(<FontAwesomeIcon key={i} icon={halfStar} style={{ color: "yellow" }}/>);
+      stars.push(<FontAwesomeIcon key={i} icon={halfStar} style={{ color: "#FFDF00" }}/>);
     } else {
-      stars.push(<FontAwesomeIcon key={i} icon={regularStar} style={{ color: "yellow" }}/>);
+      stars.push(<FontAwesomeIcon key={i} icon={regularStar} style={{ color: "#FFDF00" }}/>);
     }
   }
 
   return (
 <div className="container">
+    <button className="closeButton" >
+      <FontAwesomeIcon icon={faRectangleXmark} />
+    </button>
+  <div className="detailContainer">
     <img src={image} />
     <div className="restaurant-detail">
       <h1>{title}</h1>
@@ -48,8 +54,9 @@ const RestaurantDetail = ({ restaurant }) => {
       <p><FontAwesomeIcon icon={faLocationDot} /> {address}</p>
       <p><FontAwesomeIcon icon={faPhone} /> {phoneNumber}</p>
       <p><FontAwesomeIcon icon={faUtensils} /> {type}</p>
-      <button>SAVE TO MY LIST</button>
+      <button className="saveButton" >SAVE TO MY LIST</button>
     </div>
+  </div>
 </div>
   );
 };

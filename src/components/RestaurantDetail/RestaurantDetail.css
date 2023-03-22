@@ -6,15 +6,19 @@
 .container {
     width: 750px;
     display: flex;
+    flex-direction: column;
     height: 350px;
     background-color: rgba(0,0,0,0.1);
-    gap: 20px;
     justify-content: center;
     align-items: center;
     margin-top: 200px;
     margin-left: 200px;
     border-radius: 10px;
+}
 
+.detailContainer {
+    display: flex;
+    gap: 20px;
 }
 
 img {
@@ -27,8 +31,25 @@ img {
     display: flex;
     flex-direction: column;
     color: black;  
-    gap: 10px;
+    gap: 15px;
     height: 70vh;
     width: 380px;
     height: 300px;
   } 
+
+.closeButton {
+    align-self: flex-end;
+    margin-right: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+.saveButton {
+    width: 200px;
+    height: 30px;
+    background-color: #FF9529;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
