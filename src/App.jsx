@@ -1,11 +1,13 @@
 //import Form from "./Form";
-import Map from "./Map";
+// import Map from "./Map";
+import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
 
 function App() {
   return (
     <>
       {/* <Form /> */}
-      <Map />
+      {/* <Map /> */}
+      {<RestaurantDetail />}
     </>
   );
 }

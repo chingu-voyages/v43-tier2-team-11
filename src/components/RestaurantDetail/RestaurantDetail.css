@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.restaurant-detail {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    color: white;  
+    justify-content: space-around;
+    height: 70vh;
+    width: 40vh;
+  }
