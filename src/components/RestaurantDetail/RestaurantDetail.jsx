@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './RestaurantDetail.css';
 
 // Font awesome imports for icons
@@ -26,6 +26,20 @@ const RestaurantDetail = ({ restaurant }) => {
 
   const { title, image, type, address, phoneNumber, reviewScore, reviewTotal, price } = mockData;
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    // Set the initial value of 'isMobile'
+    setIsMobile(mediaQuery.matches);
+
+    // Update 'isMobile' when the media query changes
+    const handleChange = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= reviewScore) {
@@ -38,27 +52,65 @@ const RestaurantDetail = ({ restaurant }) => {
   }
 
   return (
-<div className="container">
-    <button className="closeButton" >
-      <FontAwesomeIcon icon={faRectangleXmark} />
-    </button>
-  <div className="detailContainer">
-    <img src={image} />
-    <div className="restaurant-detail">
-      <h1>{title}</h1>
-      <p>
-        {reviewScore} {stars} {reviewTotal}
-      </p>
-      <p>{price}</p>
-      <hr/>
-      <p><FontAwesomeIcon icon={faLocationDot} /> {address}</p>
-      <p><FontAwesomeIcon icon={faPhone} /> {phoneNumber}</p>
-      <p><FontAwesomeIcon icon={faUtensils} /> {type}</p>
-      <button className="saveButton" >SAVE TO MY LIST</button>
-    </div>
-  </div>
-</div>
+    <>
+      {isMobile ? (
+        <div className="container">
+          <button className="closeButton">
+            <FontAwesomeIcon icon={faRectangleXmark} />
+          </button>
+          <img src={image} />
+          <div className="detailContainer">
+            <div className="restaurant-detail">
+              <h1>{title}</h1>
+              <p>
+                {reviewScore} {stars} {reviewTotal}
+              </p>
+              <p>{price}</p>
+              <hr />
+              <p>
+                <FontAwesomeIcon icon={faLocationDot} /> {address}
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faUtensils} /> {type}
+              </p>
+              <button className="saveButton">SAVE TO MY LIST</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="container">
+          <button className="closeButton">
+            <FontAwesomeIcon icon={faRectangleXmark} />
+          </button>
+          <div className="detailContainer">
+            <img src={image} />
+            <div className="restaurant-detail">
+              <h1>{title}</h1>
+              <p>
+                {reviewScore} {stars} {reviewTotal}
+              </p>
+              <p>{price}</p>
+              <hr />
+              <p>
+                <FontAwesomeIcon icon={faLocationDot} /> {address}
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faUtensils} /> {type}
+              </p>
+              <button className="saveButton">SAVE TO MY LIST</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
-};
+}
+  
 
 export default RestaurantDetail;
