@@ -1,8 +1,10 @@
 .footer {
-  background-color: yellow;
+  display: flex;
+  background: #016FB9;
   height: 50px;
-  width: 100vw;
-
-  position: absolute;
-  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  color: #EBF2FA;
+  margin-top: auto;
+  width: 100%;
 }
