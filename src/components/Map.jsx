@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./Map.module.scss";
 
@@ -55,6 +54,7 @@ const Map = () => {
     );
   });
 
+  //style for Map (to be implemented later)
   // const Stadia_AlidadeSmooth = L.tileLayer(
   //   "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
   //   {
