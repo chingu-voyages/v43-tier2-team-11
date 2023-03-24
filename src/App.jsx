@@ -6,7 +6,8 @@ import LandingPage from "./pages/LandingPage";
 import ErrorPage from "./pages/ErrorPage";
 import MapPage from "./pages/MapPage";
 import Form from "./components/Form";
-import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
+
+//import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
 
 const router = createBrowserRouter([
   {
@@ -25,10 +26,10 @@ const router = createBrowserRouter([
         path: "/form",
         element: <Form />,
       },
-      {
-        path: "/restaurantDetail",
-        element: <RestaurantDetail />,
-      }
+      // {
+      //   path: "/restaurantDetail",
+      //   element: <RestaurantDetail />,
+      // }
     ],
   },
 ]);
