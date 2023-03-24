@@ -1,3 +1,4 @@
+@import "../global.module.scss";
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap");
 
 /////MIXIN
@@ -13,7 +14,7 @@ body {
 
 /////STYLES
 .form {
-  font-family: "Urbanist";
+  font-family: $font-primary;
   color: $color-primary-dark;
 
   //size
