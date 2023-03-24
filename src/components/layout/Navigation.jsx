@@ -1,10 +1,41 @@
-import classes from "./Navigation.module.scss";
+import { useMediaQuery } from "react-responsive";
+
+import Logo from "../../assets/Logo";
 
 const Navigation = () => {
-  return (
-    <div className={classes.navigation}>
-      <h1>Navigation</h1>
+  const openMenuHandler = () => {
+    alert("menu will be implemented later");
+  };
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 600px)",
+  });
+
+  //MENU
+  const smallMenu = (
+    <div className="navigation__button" onClick={openMenuHandler}>
+      <span class="navigation__icon">&nbsp;</span>
     </div>
+  );
+
+  const bigMenu = (
+    <div>
+      <ul className="navigation__list">
+        <li className="navigation__item">Home</li>
+        <li className="navigation__item">About Us</li>
+      </ul>
+    </div>
+  );
+
+  return (
+    <>
+      <div className="navigation">
+        <Logo className="navigation__title" />
+      </div>
+
+      {!isDesktop && smallMenu}
+      {isDesktop && bigMenu}
+    </>
   );
 };
 
