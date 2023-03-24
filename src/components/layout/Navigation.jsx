@@ -1,5 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 
+import Logo from "../../assets/Logo";
+
 const Navigation = () => {
   const openMenuHandler = () => {
     alert("menu will be implemented later");
@@ -28,7 +30,7 @@ const Navigation = () => {
   return (
     <>
       <div className="navigation">
-        <h1 className="navigation__title">Logo Svg?</h1>
+        <Logo className="navigation__title" />
       </div>
 
       {!isDesktop && smallMenu}
