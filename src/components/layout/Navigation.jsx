@@ -21,6 +21,7 @@ const Navigation = () => {
   const bigMenu = (
     <div>
       <header className="navigation__list">
+        
         {/* <li className="navigation__item">Home</li>
         <li className="navigation__item">About Us</li> */}
         <NavLink className="navigation__item" to="/">Home</NavLink>
