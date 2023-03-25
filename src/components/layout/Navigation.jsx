@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo";
 
 const Navigation = () => {
@@ -20,10 +20,13 @@ const Navigation = () => {
 
   const bigMenu = (
     <div>
-      <ul className="navigation__list">
-        <li className="navigation__item">Home</li>
-        <li className="navigation__item">About Us</li>
-      </ul>
+      <header className="navigation__list">
+        
+        {/* <li className="navigation__item">Home</li>
+        <li className="navigation__item">About Us</li> */}
+        <NavLink className="navigation__item" to="/">Home</NavLink>
+        <NavLink className="navigation__item">About</NavLink>
+      </header>
     </div>
   );
 
