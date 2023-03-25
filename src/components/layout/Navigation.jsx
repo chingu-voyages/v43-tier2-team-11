@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo";
 
 const Navigation = () => {
@@ -7,6 +7,7 @@ const Navigation = () => {
     alert("menu will be implemented later");
   };
 
+  //MQ
   const isDesktop = useMediaQuery({
     query: "(min-width: 600px)",
   });
@@ -19,23 +20,23 @@ const Navigation = () => {
   );
 
   const bigMenu = (
-    <div>
-      <ul className="navigation__list">
-        <li className="navigation__item">Home</li>
-        <li className="navigation__item">About Us</li>
-      </ul>
-    </div>
+    <ul className="navigation__list">
+      <li className="navigation__item">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="navigation__item">
+        <NavLink to="/">About Us</NavLink>
+      </li>
+    </ul>
   );
 
   return (
-    <>
-      <div className="navigation">
-        <Logo className="navigation__title" />
-      </div>
+    <header className="navigation">
+      <Logo className="navigation__title" />
 
       {!isDesktop && smallMenu}
       {isDesktop && bigMenu}
-    </>
+    </header>
   );
 };
 

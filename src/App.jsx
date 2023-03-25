@@ -27,14 +27,14 @@ const router = createBrowserRouter([
         path: "/form",
         element: <Form />,
       },
-      {
-        path: "/restaurantDetail",
-        element: <RestaurantDetail />,
-      },
+      // {
+      //   path: "/restaurantDetail",
+      //   element: <RestaurantDetail />,
+      // },
       {
         path: "/restaurantCard",
         element: <RestaurantCard />,
-      }
+      },
     ],
   },
 ]);
