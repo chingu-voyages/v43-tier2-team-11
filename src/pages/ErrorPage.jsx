@@ -2,11 +2,15 @@ import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
 import classes from "./ErrorPage.module.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Foursquare from "../components/Foursquare";
 
 const ErrorPage = () => {
   const handleClick = () => {
-    window.location.href = "http://localhost:5173/form";
+    window.location.href = "https://4foodies.netlify.app/";
   };
+
   return (
     <div className={classes.errorPage}>
       <div className={classes.navbar}>
@@ -33,6 +37,7 @@ const ErrorPage = () => {
           go back to home
         </button>
       </div>
+      <Foursquare />
       <div className={classes.footer}>
         Copyright © 2023 4Foodies. All rights reserved
       </div>
