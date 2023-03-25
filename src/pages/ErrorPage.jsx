@@ -37,6 +37,7 @@ const ErrorPage = () => {
           go back to home
         </button>
       </div>
+      {/* Foursquare component just to test the api here */}
       <Foursquare />
       <div className={classes.footer}>
         Copyright © 2023 4Foodies. All rights reserved
