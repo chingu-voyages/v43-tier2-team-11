@@ -1,0 +1,272 @@
+.errorPage {
+  text-align: center;
+  background-color: #ebf2fa;
+
+  .navbar {
+    /* Navbar */
+
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+
+    /* 60 */
+
+    background: #ebf2fa;
+    box-shadow: 0px 4px 4px #cbd5e1;
+
+    img {
+      /* Vector */
+
+      position: absolute;
+      width: 149px;
+      //   height: 29px;
+      left: 159px;
+      top: 25px;
+
+      //   background: #016fb9;
+    }
+
+    .links {
+      /* Frame 135 */
+
+      position: absolute;
+      width: 173px;
+      height: 18px;
+      left: 1108px;
+      top: 40px;
+
+      &__home {
+        /* Home */
+
+        position: absolute;
+        width: 50px;
+        height: 18px;
+        left: 100px;
+        top: -10px;
+
+        /* BUTTON */
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        /* neutral-1 */
+
+        color: #1b1c20;
+      }
+
+      &__aboutUs {
+        /* ABOUT US */
+
+        position: absolute;
+        width: 87px;
+        height: 18px;
+        left: 182px;
+        top: -10px;
+
+        /* BUTTON */
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        /* neutral-1 */
+
+        color: #1b1c20;
+      }
+    }
+
+    // /* BUTTON */
+
+    // font-family: "Inter";
+    // font-style: normal;
+    // font-weight: 600;
+    // font-size: 15px;
+    // line-height: 18px;
+    // text-align: center;
+    // letter-spacing: 1.25px;
+    // text-transform: uppercase;
+
+    /* neutral-1 */
+
+    color: #1b1c20;
+  }
+
+  .descriptions {
+    background-color: #ebf2fa;
+    height: 100vh;
+
+    img {
+      position: relative;
+      width: 680px;
+      height: 452px;
+      //   left: 380px;
+      top: 112px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .title {
+      /* Oops! Page Not Found */
+
+      position: relative;
+      width: 501px;
+      height: 52px;
+      //   left: 469px;
+      top: 150px;
+      text-align: center;
+      margin: 0 auto;
+
+      font-family: "Urbanist";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 51px;
+      line-height: 44px;
+      /* or 86% */
+
+      /* Azul - 5 */
+
+      color: #016fb9;
+    }
+
+    .text {
+      /* We're sorry, but the page you are looking for could not be found. It's possible that the page has been removed, renamed, or is temporarily unavailable. */
+
+      position: relative;
+      width: 508px;
+      height: 57px;
+      //   left: 471px;
+      top: 150px;
+      text-align: center;
+      margin: 0 auto;
+
+      /* Subtitle 1 */
+
+      font-family: "Urbanist";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      letter-spacing: 0.15px;
+
+      /* neutral-3 */
+
+      color: #797b89;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 16px 32px;
+      gap: 10px;
+      border: none;
+
+      position: relative;
+      width: 224px;
+      height: 50px;
+      //   left: 608px;
+      top: 200px;
+      text-align: center;
+      margin: 0 auto;
+
+      /* Coral - 5 */
+      background: #ff844b;
+      border-radius: 4px;
+
+      /* Place-holder */
+
+      //   width: 160px;
+      //   height: 18px;
+
+      /* BUTTON */
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      align-items: center;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      padding-left: 30px;
+
+      /* 60 */
+
+      color: #ebf2fa;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      &:hover {
+        cursor: pointer;
+        color: rgb(212, 210, 210);
+      }
+    }
+  }
+  .footer {
+    /* Copyright */
+
+    // position: absolute;
+    width: 100%;
+    height: 30px;
+
+    top: 1024px;
+    margin-top: -140px;
+
+    /* Azul - 5 */
+
+    background: #016fb9;
+    /* Copyright © 2023 4Foodies. All rights reserved */
+
+    // position: absolute;
+    // width: 325px;
+    // height: 21px;
+    // left: 557px;
+    top: 1038px;
+
+    /* Body 2 */
+
+    font-family: "Urbanist";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    // line-height: 18px;
+    // letter-spacing: 0.25px;
+    padding-top: 10px;
+
+    /* 60 */
+
+    color: #ebf2fa;
+
+    /* Background */
+
+    position: absolute;
+    width: 100%;
+    // height: 49.9px;
+
+    top: 1024px;
+
+    /* Azul - 5 */
+
+    background: #016fb9;
+  }
+}
