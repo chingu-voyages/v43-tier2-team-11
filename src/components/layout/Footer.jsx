@@ -1,9 +1,9 @@
-import classes from "./Footer.module.scss";
-
 const Footer = () => {
   return (
-    <div className={classes.footer}>
-      <p>Footer</p>
+    <div className="footer">
+      <p className="footer__copyright">
+        Copyright &copy; 2023 4Foodies. All rights reserved
+      </p>
     </div>
   );
 };

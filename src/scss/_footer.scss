@@ -1,0 +1,19 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  height: 50px;
+  width: 100vw;
+  background-color: $color-secondary-blue;
+  text-align: center;
+  color: white;
+  font-family: $font-primary;
+  font-size: 15px;
+
+  &__copyright {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}

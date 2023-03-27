@@ -1,34 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap");
-
-/////MIXIN
-$color-primary-dark: #667080;
-$color-border: #d5dfe9;
-
-/////RESET
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/////STYLES
+//form scss
 .form {
-  font-family: "Urbanist";
+  font-family: $font-primary;
   color: $color-primary-dark;
+  background-color: $color-primary-blue;
 
   //size
   font-size: 17px;
   padding: 40px 16px;
+  height: 100vh;
 }
 
 .location {
   display: flex;
-  justify-content: space-between;
 
   //size
   margin-bottom: 19px;
 
   &__form {
+    background-color: white;
     border: 1px solid $color-border;
     overflow: hidden;
     display: flex;
@@ -39,7 +28,6 @@ body {
   }
 
   &__input {
-    background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     border: none;
@@ -59,7 +47,9 @@ body {
   }
 
   &__border {
-    color: $color-border;
+    border: none;
+    height: 1px;
+    background-color: $color-primary-dark;
 
     //size
     margin-top: 6px;
@@ -75,10 +65,12 @@ body {
 
   &__cancel-button {
     font-family: inherit;
-    font-size: inherit;
-    color: inherit;
+    font-size: 15px;
+    color: $color-primary-orange;
     border: none;
     background-color: transparent;
+
+    margin-left: 16px;
 
     cursor: pointer;
   }
