@@ -1,16 +1,18 @@
-# 4Foodies
-
 <div id="user-content-toc">
  <ul>
   <summary><h1 style="display: inline-block;">4Foodies</h1></summary>
  </ul>
 </div>
+
 ## User-friendly restaurant finder website that helps you find the best places
 
 [![4foodies.svg](/public/4foodies.svg)](https://4foodies.netlify.app/)
 
-# Here is README of 4Foodies
-
+<div id="user-content-toc">
+ <ul>
+  <summary><h1 style="display: inline-block;">Here is README of 4Foodies</h1></summary>
+ </ul>
+</div>
 ---
 
 ![Home-page-v3.svg](/public/Home-page-v3.svg)
