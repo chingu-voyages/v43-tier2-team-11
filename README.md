@@ -14,7 +14,7 @@
 
 This is a project within a 6 week remote team project Chingu.  
 [![chingu-logo.png](/public/chingu-logo.png)](https://www.chingu.io/)
-<img src="/public/chingu-logo.png" width="50%">
+<img src="/public/chingu-logo.png" width="20%">
 
 ## Features of 4Foodies
 
