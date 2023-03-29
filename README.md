@@ -3,7 +3,6 @@
   <summary><h1 style="display: inline-block;">4Foodies</h1></summary>
  </ul>
 </div>
-
 <div id="user-content-toc">
  <ul>
   <summary><h2 style="display: inline-block;">User-friendly restaurant finder website that helps you find the best places</h2></summary>
