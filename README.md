@@ -1,6 +1,6 @@
 # 4Foodies
 
-## 4Foodies is a user-friendly restaurant finder website that helps you find the best places.
+## User-friendly restaurant finder website that helps you find the best places
 
 [![4foodies.svg](/public/4foodies.svg)](https://4foodies.netlify.app/)
 
@@ -12,7 +12,7 @@
 
 ## About this project
 
-This is a project within a 6 week remote team project Chingu.
+This is a project within a 6 week remote team project Chingu.  
 [![chingu-logo.png](/public/chingu-logo.png)](https://www.chingu.io/)
 
 ## Features of 4Foodies
@@ -25,14 +25,14 @@ This is a project within a 6 week remote team project Chingu.
 
 ### Prerequisites
 
-Install npm
+Install npm  
 `npm install npm@latest -g`
 
 ### Getting Started
 
-1. Clone the repo
+1. Clone the repo  
    `git clone https://github.com/chingu-voyages/v43-tier2-team-11.git`
-2. Install NPM packages
+2. Install NPM packages  
    `npm install`
 
 ### Project Members
