@@ -1,5 +1,10 @@
 # 4Foodies
 
+<div id="user-content-toc">
+ <ul>
+  <summary><h1 style="display: inline-block;">4Foodies</h1></summary>
+ </ul>
+</div>
 ## User-friendly restaurant finder website that helps you find the best places
 
 [![4foodies.svg](/public/4foodies.svg)](https://4foodies.netlify.app/)
@@ -12,8 +17,9 @@
 
 ## About this project
 
-This is a project within a 6 week remote team project Chingu.  
-[![chingu-logo.png](/public/chingu-logo.png)](https://www.chingu.io/)
+This is a project within a 6 week remote team project Chingu.
+
+<!-- [![chingu-logo.png](/public/chingu-logo.png)](https://www.chingu.io/) -->
 <img src="/public/chingu-logo.png" width="20%">
 
 ## Features of 4Foodies
