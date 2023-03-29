@@ -9,7 +9,8 @@
  </ul>
 </div>
 
-[![4foodies.svg](/public/4foodies.svg)](https://4foodies.netlify.app/)
+[![4foodies.svg](/public/4foodies.svg)](https://4foodies.netlify.app/)  
+[https://4foodies.netlify.app/](https://4foodies.netlify.app/)
 
 <div id="user-content-toc">
  <ul>
