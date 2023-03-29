@@ -46,7 +46,7 @@ Install npm
 2. Install NPM packages  
    `npm install`
 
-### Project Members
+## Project Members
 
 #### Product Owner
 
