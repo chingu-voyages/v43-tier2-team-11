@@ -1,55 +1,51 @@
+import { useEffect, useState } from "react"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./Map.module.scss";
-
-const DUMMY_COORDINATES = [
-  {
-    id: "i1",
-    name: "bills",
-    coords: {
-      lat: 35.668884986902434,
-      long: 139.70603408498235,
-    },
-  },
-  {
-    id: "i2",
-    name: "Harry's Sandwich Company",
-    coords: {
-      lat: 35.66702189118264,
-      long: 139.70644521236878,
-    },
-  },
-  {
-    id: "i3",
-    name: "SOUP STOCK TOKYO CAFE",
-    coords: {
-      lat: 35.66597014771571,
-      long: 139.711036633326,
-    },
-  },
-  {
-    id: "i4",
-    name: "Fratelli Paradiso",
-    coords: {
-      lat: 35.6674098641632,
-      long: 139.70841296420758,
-    },
-  },
-];
-
-const DUMMY_LOCATION = { lat: 35.66756203584793, long: 139.7077023534186 };
+import Loading from "./Loading";
+import { mapData } from "./fetch/api"
 
 const Map = () => {
-  const { lat, long } = DUMMY_LOCATION;
-  const coords = [lat, long];
+  const [data, setData] = useState([])
+  const [currentLocation, setCurrentLocation] = useState('')
+  const [loading, setLodaing] = useState(true)
+  const [coords, setCoords] = useState([])
   const mapZoomLevel = 15;
 
-  const markers = DUMMY_COORDINATES.map((el) => {
-    const { lat, long } = el.coords;
-    const coords = [lat, long];
+  useEffect(() => {
+    if (!loading) {
+      mapData(coords).then((res) => {
+        setData(res['data']['results'])
+      })
+    } else {
+      return
+    }
+  }, [loading, coords])
 
+  useEffect(() => {
+    return navigator.geolocation.getCurrentPosition(location)
+  }, [])
+
+  useEffect(() => {
+    if (!currentLocation) {
+      setLodaing(true)
+    } else {
+      const { lat, long } = currentLocation;
+      setCoords([lat, long])
+      setLodaing(false)
+    }
+  }, [currentLocation])
+
+  const location = (position) => {
+    let location = { 'lat': position.coords.latitude, 'long': position.coords.longitude }
+    setCurrentLocation(location);
+  }
+
+  const markers = data.map((el) => {
+    const { latitude, longitude } = el['geocodes']['main']
+    const coords = [latitude, longitude];
     return (
-      <Marker position={coords} key={el.id}>
-        <Popup>{el.name}</Popup>
+      <Marker position={coords} key={el['fsq_id']}>
+        <Popup>{el['name']}</Popup>
       </Marker>
     );
   });
@@ -65,18 +61,20 @@ const Map = () => {
   // );
 
   return (
-    <MapContainer
-      center={coords}
-      zoom={mapZoomLevel}
-      scrollWheelZoom={false}
-      className={classes.map}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {markers}
-    </MapContainer>
+    <>
+      {loading ? <Loading /> : <MapContainer
+        center={coords}
+        zoom={mapZoomLevel}
+        scrollWheelZoom={false}
+        className={classes.map}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {markers}
+      </MapContainer>}
+    </>
   );
 };
 
