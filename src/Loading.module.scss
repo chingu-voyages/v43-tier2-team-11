@@ -1,0 +1,41 @@
+.loading {
+    background: #98A7BF;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &__spiner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: auto;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        animation: spiner-animation .6s infinite linear;
+        background: conic-gradient(from 180deg at 50% 50%, #667080 0deg, rgba(196, 196, 196, 0) 360deg);
+
+        &:after {
+            background: #98A7BF;
+            width: 85%;
+            height: 85%;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            border-radius: 50%;
+        }
+    }
+}
+
+@keyframes spiner-animation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
