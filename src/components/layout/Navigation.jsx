@@ -32,10 +32,12 @@ const Navigation = () => {
 
   return (
     <header className="navigation">
-      <Logo className="navigation__title" />
+      <div className="navigation__container">
+        <Logo className="navigation__title" />
 
-      {!isDesktop && smallMenu}
-      {isDesktop && bigMenu}
+        {!isDesktop && smallMenu}
+        {isDesktop && bigMenu}
+      </div>
     </header>
   );
 };
