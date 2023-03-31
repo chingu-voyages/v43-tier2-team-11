@@ -15,7 +15,7 @@ const Navigation = () => {
   //MENU
   const smallMenu = (
     <div className="navigation__button" onClick={openMenuHandler}>
-      <span class="navigation__icon">&nbsp;</span>
+      <span className="navigation__icon">&nbsp;</span>
     </div>
   );
 
