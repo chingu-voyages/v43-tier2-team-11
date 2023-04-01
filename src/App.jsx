@@ -9,6 +9,7 @@ import Form from "./components/Form";
 
 //import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
 import RestaurantCard from "./components/RestaurantCard/RestaurantCard";
+import NoResultsPage from "./pages/NoResultsPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/restaurantCard",
         element: <RestaurantCard />,
+      },
+      {
+        path: "/noResults",
+        element: <NoResultsPage />,
       },
     ],
   },
