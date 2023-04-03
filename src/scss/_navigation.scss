@@ -2,31 +2,45 @@
   background-color: $color-primary-blue;
   box-shadow: 0px 4px 4px #cbd5e1;
   height: $nav-height;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &__title {
-    margin-left: 16px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  &__container {
+    width: 100%;
+    max-width: 1122px;
+    display: flex;
+    justify-content: space-between;
   }
 
   //big menu
   &__list {
     list-style: none;
-    position: absolute;
-    right: 163px;
-    top: 40px;
+    display: flex;
+    align-items: flex-end;
   }
 
   &__item {
-    font-size: 15px;
-    font-family: $font-secondary;
-    font-weight: 600;
     margin: 0 16px;
     display: inline-block;
     letter-spacing: 1.25px;
-    text-transform: uppercase;
+    font-size: 15px;
+    font-family: $font-secondary;
+    font-weight: 600;
     cursor: pointer;
+    text-transform: uppercase;
+
+    &:link,
+    &:visited,
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: $color-secondary-blue;
+    }
   }
 
   //small menu
@@ -34,7 +48,6 @@
     position: absolute;
     right: 35px;
     top: 40px;
-
     cursor: pointer;
   }
 
