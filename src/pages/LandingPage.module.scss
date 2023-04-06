@@ -1,81 +1,86 @@
 body {
-    background-color: #EBF2FA;
+  background-color: #ebf2fa;
 }
 
-.mainContainer {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.heroContainer {
+  min-height: calc(100vh - 5rem);
+  width: 100%;
+  max-width: 1122px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  justify-content: center;
 }
 
-.home, .mainContainer {
-    display: flex;
+.heroImage img {
+  width: 343px;
+  height: 343px;
 }
 
-.home {
-    width: 80%;
-    margin: auto;
-    justify-content: space-between;
+.heroInfo h1 {
+  color: #016fb9;
+  font-weight: 700;
+  font-size: 51px;
+  width: 343px;
+  line-height: 44px;
+  text-align: center;
 }
 
-.hero img {
-    width: 100%;
-    height: 100%;
+.heroInfo p {
+  color: #797b89;
+  font-size: 17px;
+  line-height: 20px;
+  width: 343px;
+  letter-spacing: 0.15px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.hero {
-    width: 65%;
-    height: 80vh;
+.heroInfo button {
+  color: #fff;
+  background-color: #ff844b;
+  text-transform: uppercase;
+  border: transparent;
+  border-radius: 4px;
+  line-height: 18px;
+  letter-spacing: 1.25px;
+  font-weight: 600;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 32px;
+  gap: 10px;
+  margin: 2rem auto;
 }
 
-.homeContent {
-    width: 35%;
-    align-self: center;
+.heroInfo button:hover {
+  background-color: #ff9c4b;
+  box-shadow: 0px 4px 4px rgba(255, 156, 75, 0.25);
 }
 
-.homeContent p {
-    font-size: 1rem;
-    color: #797B89;
+.heroInfo button:active {
+  background-color: #eb8531;
 }
 
-.homeContent button {
-    margin: 1em 0;
-    background-color: #FF844B;
-    color: #EBF2FA;
-    height: 50px;
-    width: 243px;
-    border: none;
-    text-transform: uppercase;
-    font-weight: 600;
-}
+@media screen and (min-width: 992px) {
+  .heroContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .heroImage img {
+    width: 545px;
+    height: 545px;
+  }
 
-.homeTitle {
-    font-size: 3rem;
-    color: #016FB9;
-}
-
-@media (max-width: 600px) {
-    .home, .homeContent {
-        flex-direction: column;
-    }
-
-    .home {
-        width: 90%;
-    }
-
-    .homeContent {
-        display: flex;
-    }
-
-    .homeContent button {
-        align-self: center;
-    }
-
-    .homeTitle {
-        text-align: center;
-    }
-
-    .homeContent, .hero {
-        width: 100%;
-    }
+  .heroInfo h1 {
+    width: 507px;
+    text-align: left;
+  }
+  .heroInfo p {
+    width: 403px;
+    text-align: left;
+  }
+  .heroInfo button {
+    margin: 2rem 0 0;
+  }
 }
