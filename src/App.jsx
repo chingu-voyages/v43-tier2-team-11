@@ -3,11 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //pages
 import LandingPage from "./pages/LandingPage";
+import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import MapPage from "./pages/MapPage";
 import Form from "./components/Form";
-import RestaurantCard from "./components/RestaurantCard/RestaurantCard";
-import RestaurantListPage from "./components/RestaurantListPage";
+import RestaurantList from "./pages/RestaurantList/RestaurantList";
+import NoResults from "./pages/NoResults";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
+        path: "/about",
+        element: <About />,
+      },
+      {
         path: "/map",
         element: <MapPage />,
       },
@@ -27,12 +32,12 @@ const router = createBrowserRouter([
         element: <Form />,
       },
       {
-        path: "/restaurantCard",
-        element: <RestaurantCard />,
+        path: "/restaurantList",
+        element: <RestaurantList />,
       },
       {
-        path: "/restaurantListPage",
-        element: <RestaurantListPage />,
+        path: "/noresults",
+        element: <NoResults />,
       },
     ],
   },

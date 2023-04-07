@@ -1,16 +1,16 @@
-import Navigation from "./layout/Navigation";
-import Footer from "./layout/Footer";
+import Navigation from "../components/layout/Navigation";
+import Footer from "../components/layout/Footer";
 import bgImage from "../assets/illustrations/2.svg"
 
-const RestaurantListPage = () => {
+const NoResults = () => {
   return (
-    <div className="restaurantlist">
+    <div className="noresults">
         <Navigation />
-        <div className="restaurantlist__mainContent">
-            <div className="restaurantlist__listBg">
+        <div className="noresults__mainContent">
+            <div className="noresults__listBg">
                 <img src={bgImage} alt="" />
             </div>
-            <div className="restaurantlist__listContent">
+            <div className="noresults__listContent">
                 <h2>No Results Found</h2>
                 <p>We're sorry to say that there are currently no restaurants in the location you searched for.</p>
                 <input type="text" placeholder="🔍 Please enter a location to find restaurants"/>
@@ -21,4 +21,4 @@ const RestaurantListPage = () => {
   )
 }
 
-export default RestaurantListPage
+export default NoResults;
