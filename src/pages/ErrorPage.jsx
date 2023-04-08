@@ -15,7 +15,7 @@ const ErrorPage = () => {
           <Link to="/" className={classes["links__home"]}>
             HOME
           </Link>
-          <Link to="/map" className={classes["links__aboutUs"]}>
+          <Link to="/about" className={classes["links__aboutUs"]}>
             ABOUT US
           </Link>
         </div>

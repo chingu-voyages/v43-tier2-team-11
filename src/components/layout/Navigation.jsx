@@ -71,7 +71,7 @@ const Navigation = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="navigation__item">
-        <NavLink to="/">About Us</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </li>
     </ul>
   );
