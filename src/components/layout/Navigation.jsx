@@ -10,9 +10,31 @@ export const SmallMenu = () => {
 
   return (
     <div id="small-navigation" onClick={closeModal}>
-      {/* <div className="small-navigation__menu">
-        <h1>Small Menu</h1>
-      </div> */}
+      <div className="small-navigation__menu">
+        <Logo className="navigation__title" />
+
+        <div className="small-navigation__list">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "small-navigation__item small-navigation__active"
+                : "small-navigation__item small-navigation__inactive"
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "small-navigation__item small-navigation__active"
+                : "small-navigation__item small-navigation__inactive"
+            }
+          >
+            About
+          </NavLink>
+        </div>
+      </div>
       <div className="small-navigation__backdrop">&nbsp;</div>
     </div>
   );

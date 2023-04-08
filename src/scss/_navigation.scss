@@ -93,7 +93,37 @@
 
 .small-navigation {
   &__menu {
-    width: max-content;
+    background-color: $color-primary-blue;
+    text-align: center;
+    width: 285px;
+    padding: 60px 16px;
+    z-index: 1000;
+
+    border-right: 1px solid red;
+  }
+
+  &__list {
+    margin-top: 32px;
+  }
+
+  &__item {
+    display: block;
+    margin: 12px 0;
+    padding: 8px 0;
+
+    text-decoration: none;
+    color: $color-primary-dark;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    font-size: 15px;
+  }
+
+  &__active {
+    background-color: white;
+  }
+
+  &__inactive {
+    background-color: red;
   }
 
   &__backdrop {
