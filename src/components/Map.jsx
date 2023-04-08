@@ -50,33 +50,8 @@ const Map = () => {
     );
   });
 
-  // - search start -
-  // const [searchData, setSearchData] = useState([])
-  // const categoryRef = useRef(null)
-  // const cityNameRef = useRef(null)
-
-  // const searchBtn = (coords) => {
-  //   const cityName = cityNameRef.current?.value
-  //   const categoryName = categoryRef.current?.value
-  //   if (cityName !== undefined || categoryName !== undefined) {
-  //     const searchObj = { categoryName: categoryRef.current?.value, cityName: cityNameRef.current?.value, coords: coords }
-  //     getSearchData(searchObj).then((res) => {
-  //       setSearchData(res)
-  //     })
-  //   } else {
-  //     return
-  //   }
-  // }
-  // console.log(searchData)
-  // - search end -
-
   return (
     <>
-      <label htmlFor="">city name</label>
-      <input ref={cityNameRef} type='text' />
-      <label htmlFor="">category name</label>
-      <input ref={categoryRef} type='text' />
-      <button onClick={() => searchBtn(coords)}>ボタン</button>
       {loading ? <Loading /> : <MapContainer
         center={coords}
         zoom={mapZoomLevel}
