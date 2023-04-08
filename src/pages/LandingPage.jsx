@@ -6,13 +6,7 @@ import heroImg from "../assets/illustrations/1.svg";
 import classes from "./LandingPage.module.scss";
 import Form from "../components/Form";
 
-import { SmallMenu } from "../components/layout/Navigation";
-import { ModalContext } from "../store/ModalContext";
-
 const LandingPage = () => {
-  //ModalContext
-  const { isOpen } = useContext(ModalContext);
-
   //STATE
   const [showForm, setShowForm] = useState(false);
 
@@ -43,7 +37,6 @@ const LandingPage = () => {
           </article>
         </div>
       </header>
-      {isOpen && <SmallMenu />}
       <Footer />
     </>
   );

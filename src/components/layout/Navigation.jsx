@@ -15,6 +15,7 @@ export const SmallMenu = () => {
 
         <div className="small-navigation__list">
           <NavLink
+            to="/"
             className={({ isActive }) =>
               isActive
                 ? "small-navigation__item small-navigation__active"
@@ -25,6 +26,7 @@ export const SmallMenu = () => {
           </NavLink>
 
           <NavLink
+            to="/about"
             className={({ isActive }) =>
               isActive
                 ? "small-navigation__item small-navigation__active"
@@ -83,6 +85,7 @@ const Navigation = () => {
 
         {!isDesktop && smallMenu}
         {isDesktop && bigMenu}
+        {isOpen && <SmallMenu />}
       </div>
     </header>
   );
