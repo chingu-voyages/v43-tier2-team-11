@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./Map.module.scss";
 import Loading from "./Loading";
-import { mapData } from "./fetch/api"
+import { getMapData } from "./fetch/api"
 
 const Map = () => {
-  const [data, setData] = useState([])
+  const [mapData, setMapData] = useState([])
   const [currentLocation, setCurrentLocation] = useState('')
   const [loading, setLodaing] = useState(true)
   const [coords, setCoords] = useState([])
@@ -13,8 +13,8 @@ const Map = () => {
 
   useEffect(() => {
     if (!loading) {
-      mapData(coords).then((res) => {
-        setData(res['data']['results'])
+      getMapData(coords).then((res) => {
+        setMapData(res)
       })
     } else {
       return
@@ -40,28 +40,43 @@ const Map = () => {
     setCurrentLocation(location);
   }
 
-  const markers = data.map((el) => {
+  const markers = mapData.map((el, index) => {
     const { latitude, longitude } = el['geocodes']['main']
     const coords = [latitude, longitude];
     return (
-      <Marker position={coords} key={el['fsq_id']}>
+      <Marker position={coords} key={index}>
         <Popup>{el['name']}</Popup>
       </Marker>
     );
   });
 
-  //style for Map (to be implemented later)
-  // const Stadia_AlidadeSmooth = L.tileLayer(
-  //   "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
-  //   {
-  //     maxZoom: 20,
-  //     attribution:
-  //       '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+  // - search start -
+  // const [searchData, setSearchData] = useState([])
+  // const categoryRef = useRef(null)
+  // const cityNameRef = useRef(null)
+
+  // const searchBtn = (coords) => {
+  //   const cityName = cityNameRef.current?.value
+  //   const categoryName = categoryRef.current?.value
+  //   if (cityName !== undefined || categoryName !== undefined) {
+  //     const searchObj = { categoryName: categoryRef.current?.value, cityName: cityNameRef.current?.value, coords: coords }
+  //     getSearchData(searchObj).then((res) => {
+  //       setSearchData(res)
+  //     })
+  //   } else {
+  //     return
   //   }
-  // );
+  // }
+  // console.log(searchData)
+  // - search end -
 
   return (
     <>
+      <label htmlFor="">city name</label>
+      <input ref={cityNameRef} type='text' />
+      <label htmlFor="">category name</label>
+      <input ref={categoryRef} type='text' />
+      <button onClick={() => searchBtn(coords)}>ボタン</button>
       {loading ? <Loading /> : <MapContainer
         center={coords}
         zoom={mapZoomLevel}
