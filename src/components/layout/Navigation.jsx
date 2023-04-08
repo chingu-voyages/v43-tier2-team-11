@@ -1,10 +1,34 @@
+import { useContext, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo";
 
+import { ModalContext } from "../../store/ModalContext";
+
+export const SmallMenu = () => {
+  const { closeModal } = useContext(ModalContext);
+
+  return (
+    <div id="small-navigation" onClick={closeModal}>
+      {/* <div className="small-navigation__menu">
+        <h1>Small Menu</h1>
+      </div> */}
+      <div className="small-navigation__backdrop">&nbsp;</div>
+    </div>
+  );
+};
+
 const Navigation = () => {
+  //ModalContext
+  const { isOpen, openModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
+
   const openMenuHandler = () => {
-    alert("menu will be implemented later");
+    openModal();
+    console.log("small menu opened");
   };
 
   //MQ

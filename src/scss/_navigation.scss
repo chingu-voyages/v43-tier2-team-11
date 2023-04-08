@@ -80,3 +80,28 @@
     }
   }
 }
+
+#small-navigation {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+}
+
+.small-navigation {
+  &__menu {
+    width: max-content;
+  }
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    z-index: 500;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(27, 28, 32, 0.1);
+  }
+}

@@ -1,12 +1,19 @@
 // import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useContext, useState } from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import heroImg from "../assets/illustrations/1.svg";
 import classes from "./LandingPage.module.scss";
 import Form from "../components/Form";
 
+import { SmallMenu } from "../components/layout/Navigation";
+import { ModalContext } from "../store/ModalContext";
+
 const LandingPage = () => {
+  //ModalContext
+  const { isOpen } = useContext(ModalContext);
+
+  //STATE
   const [showForm, setShowForm] = useState(false);
 
   const renderForm = () => {
@@ -35,20 +42,8 @@ const LandingPage = () => {
             )}
           </article>
         </div>
-
-        {/* <p>(For development purpose links to each pages are below)</p>
-      <ul>
-        <li>
-          <Link to="/map">Map Page</Link>
-        </li>
-        <li>
-          <Link to="/error">Error Page</Link>
-        </li>
-        <li>
-          <Link to="/form">Form Page</Link>
-        </li>
-      </ul> */}
       </header>
+      {isOpen && <SmallMenu />}
       <Footer />
     </>
   );
