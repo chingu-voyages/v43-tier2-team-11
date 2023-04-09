@@ -1,4 +1,5 @@
 import axios from 'axios'
+import NoImage from "../../assets/illustrations/noimage.svg"
 
 const headers = {
     headers: {
@@ -17,18 +18,39 @@ let parameters = {
     sort: 'DISTANCE'
 }
 
-export const getShopData = async (props) => {
+const getShopData = async (props) => {
     const shopData = []
-    for (let i = 0; i < props['data']['results']['length']; i++) {
+    for (let i = LENGTH; i < props['data']['results']['length']; i++) {
         const shopId = props['data']['results'][i]['fsq_id']
         await axios.get(`https://api.foursquare.com/v3/places/${shopId}/photos?limit=1&sort=POPULAR`, headers).then((res) => {
             const dataArray = res['data'][LENGTH]
-            shopData.push({ imagesUrl: dataArray['prefix'] + 'original' + dataArray['suffix'], shopId: shopId, geocodes: props['data']['results'][i]['geocodes'], location: props['data']['results'][i]['location'], name: props['data']['results'][i]['name'], categories: props['data']['results'][i]['categories'] })
+            if (res['data'].length === LENGTH) {
+                shopData.push({ imagesUrl: NoImage, shopId: shopId, geocodes: props['data']['results'][i]['geocodes'], location: props['data']['results'][i]['location'], name: props['data']['results'][i]['name'], categories: props['data']['results'][i]['categories'] })
+            } else {
+                shopData.push({ imagesUrl: dataArray['prefix'] + 'original' + dataArray['suffix'], shopId: shopId, geocodes: props['data']['results'][i]['geocodes'], location: props['data']['results'][i]['location'], name: props['data']['results'][i]['name'], categories: props['data']['results'][i]['categories'] })
+            }
         }).catch((error) => {
             return error
         })
     }
     return shopData
+}
+
+export const getLocation = async (props) => {
+    const options = {
+        method: 'GET',
+        url: 'https://api.foursquare.com/v3/places/search',
+        params: { near: props },
+        headers: headers['headers']
+    };
+    const locations = await axios.request(options)
+        .then(function (response) {
+            return response['data']['context']['geo_bounds']['circle']['center']
+        })
+        .catch(function (error) {
+            return console.error(error);
+        });
+    return locations
 }
 
 export const getMapData = async (coords) => {
@@ -38,19 +60,11 @@ export const getMapData = async (coords) => {
 }
 
 export const getSearchData = async (props) => {
-    if (props['categoryName'] !== '' && props['cityName'] !== '') {
+    if (props['cityName'] !== '') {
         parameters['ll'] = ""
         parameters['near'] = props['cityName']
-        parameters['query'] = props['categoryName']
-    }
-    if (props['cityName'] !== '' && props['categoryName'] === '') {
-        parameters['ll'] = ""
-        parameters['near'] = props['cityName']
-    }
-    if (props['categoryName'] !== '' && props['cityName'] === '') {
-        parameters['ll'] = props['coords']
-        parameters['query'] = props['categoryName']
     }
     const getData = await axios.get(BASEURL + '/search?' + new URLSearchParams(parameters), headers)
-    return await getShopData(getData)
+    const fetchData = getShopData(getData)
+    return await fetchData
 }
