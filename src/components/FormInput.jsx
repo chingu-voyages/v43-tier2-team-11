@@ -14,7 +14,7 @@ const SUGGESTIONS = [
 ]
 
 const FormInput = (props) => {
-    const { setLoading } = props
+    const { setLoading } = prop
     const locationRef = useRef()
 
     const navigateTo = useNavigate()
