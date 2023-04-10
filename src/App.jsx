@@ -3,13 +3,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //pages
 import LandingPage from "./pages/LandingPage";
+import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import MapPage from "./pages/MapPage";
 import Form from "./components/Form";
 
-//import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
-import RestaurantCard from "./components/RestaurantCard/RestaurantCard";
-import NoResultsPage from "./pages/NoResultsPage";
+import RestaurantList from "./pages/RestaurantList/RestaurantList";
+import NoResults from "./pages/NoResults";
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
+        path: "/about",
+        element: <About />,
+      },
+      {
         path: "/map",
         element: <MapPage />,
       },
@@ -28,13 +33,13 @@ const router = createBrowserRouter([
         path: "/form",
         element: <Form />,
       },
-      // {
-      //   path: "/restaurantDetail",
-      //   element: <RestaurantDetail />,
-      // },
       {
-        path: "/restaurantCard",
-        element: <RestaurantCard />,
+        path: "/restaurantList",
+        element: <RestaurantList />,
+      },
+      {
+        path: "/noresults",
+        element: <NoResults />,
       },
       {
         path: "/noResults",

@@ -14,30 +14,31 @@ const LandingPage = () => {
   };
 
   return (
-    <div className={classes.mainContainer}>
+    <>
       <Navigation />
-      <div className={classes.home}>
-        <div className={classes.hero}>
-          <img src={heroImg} alt="" />
-        </div>
-        <div className={classes.homeContent}>
-          <h1 className={classes.homeTitle}>
-            Find the Best Restaurants with Ease
-          </h1>
-          <p>
-            4 Foodies is a user-friendly restaurant finder website that helps
-            you find the best places
-          </p>
-          <button onClick={renderForm}>Explore Locations</button>
-          {showForm && (
-            <div>
-              <Form />
-            </div>
-          )}
-        </div>
-      </div>
 
-      {/* <p>(For development purpose links to each pages are below)</p>
+      <header className={classes.hero}>
+        <div className={classes.heroContainer}>
+          <article className={classes.heroImage}>
+            <img src={heroImg} alt="" />
+          </article>
+          <article className={classes.heroInfo}>
+            <h1>Find the Best Restaurants with Ease</h1>
+            <p>
+              4 Foodies is a user-friendly restaurant finder website that helps
+              you find the best places
+            </p>
+            <button onClick={renderForm}>Explore Locations</button>
+            {showForm && (
+              <div>
+                <Form />
+              </div>
+            )}
+          </article>
+        </div>
+
+
+        {/* <p>(For development purpose links to each pages are below)</p>
       <ul>
         <li>
           <Link to="/map">Map Page</Link>
@@ -49,9 +50,9 @@ const LandingPage = () => {
           <Link to="/form">Form Page</Link>
         </li>
       </ul> */}
-
+      </header>
       <Footer />
-    </div>
+    </>
   );
 };
 

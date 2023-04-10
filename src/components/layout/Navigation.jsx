@@ -15,7 +15,7 @@ const Navigation = () => {
   //MENU
   const smallMenu = (
     <div className="navigation__button" onClick={openMenuHandler}>
-      <span class="navigation__icon">&nbsp;</span>
+      <span className="navigation__icon">&nbsp;</span>
     </div>
   );
 
@@ -25,17 +25,19 @@ const Navigation = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="navigation__item">
-        <NavLink to="/">About Us</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </li>
     </ul>
   );
 
   return (
     <header className="navigation">
-      <Logo className="navigation__title" />
+      <div className="navigation__container">
+        <Logo className="navigation__title" />
 
-      {!isDesktop && smallMenu}
-      {isDesktop && bigMenu}
+        {!isDesktop && smallMenu}
+        {isDesktop && bigMenu}
+      </div>
     </header>
   );
 };
