@@ -16,6 +16,7 @@ const LandingPage = () => {
   return (
     <>
       <Navigation />
+
       <header className={classes.hero}>
         <div className={classes.heroContainer}>
           <article className={classes.heroImage}>
@@ -35,6 +36,7 @@ const LandingPage = () => {
             )}
           </article>
         </div>
+
 
         {/* <p>(For development purpose links to each pages are below)</p>
       <ul>
