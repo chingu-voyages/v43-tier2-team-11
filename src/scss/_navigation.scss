@@ -80,3 +80,61 @@
     }
   }
 }
+
+#small-navigation {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+}
+
+.small-navigation {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $color-primary-blue;
+    text-align: center;
+    width: 285px;
+    padding: 60px 16px;
+    z-index: 1000;
+    filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  &__list {
+    margin-top: 32px;
+  }
+
+  &__item {
+    display: block;
+    margin: 12px 0;
+    padding: 8px 0;
+
+    text-decoration: none;
+    color: $color-primary-dark;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    font-size: 15px;
+  }
+
+  &__active {
+    background-color: white;
+  }
+
+  &__inactive {
+    background-color: transparent;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    z-index: 500;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(27, 28, 32, 0.1);
+  }
+}

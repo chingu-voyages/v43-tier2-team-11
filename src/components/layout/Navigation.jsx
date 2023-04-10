@@ -1,10 +1,58 @@
+import { useContext, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo";
 
+import { ModalContext } from "../../store/ModalContext";
+
+export const SmallMenu = () => {
+  const { closeModal } = useContext(ModalContext);
+
+  return (
+    <div id="small-navigation" onClick={closeModal}>
+      <div className="small-navigation__menu">
+        <Logo className="navigation__title" />
+
+        <div className="small-navigation__list">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "small-navigation__item small-navigation__active"
+                : "small-navigation__item small-navigation__inactive"
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "small-navigation__item small-navigation__active"
+                : "small-navigation__item small-navigation__inactive"
+            }
+          >
+            About
+          </NavLink>
+        </div>
+      </div>
+      <div className="small-navigation__backdrop">&nbsp;</div>
+    </div>
+  );
+};
+
 const Navigation = () => {
+  //ModalContext
+  const { isOpen, openModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
+
   const openMenuHandler = () => {
-    alert("menu will be implemented later");
+    openModal();
+    console.log("small menu opened");
   };
 
   //MQ
@@ -37,6 +85,7 @@ const Navigation = () => {
 
         {!isDesktop && smallMenu}
         {isDesktop && bigMenu}
+        {isOpen && <SmallMenu />}
       </div>
     </header>
   );
