@@ -17,6 +17,7 @@ const LandingPage = () => {
   return (
     <>
       <Navigation />
+
       <header className={classes.hero}>
         <div className={classes.heroContainer}>
           <article className={classes.heroImage}>
@@ -36,6 +37,18 @@ const LandingPage = () => {
             )}
           </article>
         </div>
+        {/* <p>(For development purpose links to each pages are below)</p>
+      <ul>
+        <li>
+          <Link to="/map">Map Page</Link>
+        </li>
+        <li>
+          <Link to="/error">Error Page</Link>
+        </li>
+        <li>
+          <Link to="/form">Form Page</Link>
+        </li>
+      </ul> */}
       </header>
       <Footer />
     </>

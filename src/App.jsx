@@ -7,8 +7,10 @@ import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import MapPage from "./pages/MapPage";
 import Form from "./components/Form";
+
 import RestaurantList from "./pages/RestaurantList/RestaurantList";
 import NoResults from "./pages/NoResults";
+
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/noresults",
         element: <NoResults />,
+      },
+      {
+        path: "/noResults",
+        element: <NoResultsPage />,
       },
     ],
   },

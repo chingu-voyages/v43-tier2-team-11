@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ebf2fa;
+}
+
+.dataCard,
+.card-container {
+  display: flex;
+}
+
+.dataCard {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-container {
+  width: 80%;
+  margin: 1em auto;
+  flex-direction: column;
+}
+
+.restaurant-card {
+  width: 32%;
+  box-shadow: 2px 2px 4px #015994;
+  margin-bottom: 1.2em;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 132px;
+  object-fit: cover;
+  object-position: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  cursor: pointer;
+}
+
+.cardContent {
+  padding: 0.7em 1em;
+}
+
+.cardContent h3 {
+  cursor: pointer;
+  margin: 0;
+}
+.cardContent p {
+  margin: 0;
+}
+
+.cardHeading {
+  color: #016fb9;
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1b1c20;
+}
+
+.cardContent p {
+  color: #797b89;
+  font-size: 0.8rem;
+}
+
+.navBack {
+  background-color: white;
+  color: #ff844b;
+  padding: 1em;
+  border-radius: 13.7px;
+  border: none;
+  align-self: flex-end;
+}
+
+@media (max-width: 600px) {
+  .cardHeading {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-card {
+    width: 100%;
+  }
+
+  .card-container {
+    width: 90%;
+  }
+
+  .dataCard {
+    flex-direction: column;
+  }
+}
