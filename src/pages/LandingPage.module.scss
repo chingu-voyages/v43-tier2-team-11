@@ -63,10 +63,15 @@ body {
   background-color: #eb8531;
 }
 
+.heroForm {
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 992px) {
   .heroContainer {
     grid-template-columns: 1fr 1fr;
   }
+
   .heroImage img {
     width: 545px;
     height: 545px;
@@ -76,10 +81,12 @@ body {
     width: 507px;
     text-align: left;
   }
+
   .heroInfo p {
     width: 403px;
     text-align: left;
   }
+
   .heroInfo button {
     margin: 2rem 0 0;
   }

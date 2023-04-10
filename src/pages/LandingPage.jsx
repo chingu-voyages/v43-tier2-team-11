@@ -1,13 +1,14 @@
-// import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import heroImg from "../assets/illustrations/1.svg";
 import classes from "./LandingPage.module.scss";
-import Form from "../components/Form";
+import FormInput from "../components/FormInput";
+import Loading from "../components/Loading"
 
 const LandingPage = () => {
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const renderForm = () => {
     setShowForm(!showForm);
@@ -16,6 +17,7 @@ const LandingPage = () => {
   return (
     <>
       <Navigation />
+      {loading ? <Loading /> : ''}
       <header className={classes.hero}>
         <div className={classes.heroContainer}>
           <article className={classes.heroImage}>
@@ -27,27 +29,9 @@ const LandingPage = () => {
               4 Foodies is a user-friendly restaurant finder website that helps
               you find the best places
             </p>
-            <button onClick={renderForm}>Explore Locations</button>
-            {showForm && (
-              <div>
-                <Form />
-              </div>
-            )}
+            {showForm ? <div className={classes.heroForm}><FormInput setLoading={setLoading} /></div> : <button onClick={renderForm}>Explore Locations</button>}
           </article>
         </div>
-
-        {/* <p>(For development purpose links to each pages are below)</p>
-      <ul>
-        <li>
-          <Link to="/map">Map Page</Link>
-        </li>
-        <li>
-          <Link to="/error">Error Page</Link>
-        </li>
-        <li>
-          <Link to="/form">Form Page</Link>
-        </li>
-      </ul> */}
       </header>
       <Footer />
     </>

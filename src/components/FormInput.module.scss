@@ -27,11 +27,11 @@ body {
   }
 
   &__title {
-    font-weight: 700;
-    margin: 0;
-
-    //size
-    font-size: 15px;
+    margin: 0 !important;
+    text-align: left !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    color: #1B1C20 !important;
   }
 
   &__search-icon {
