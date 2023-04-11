@@ -10,8 +10,8 @@ const NoResultsPage = () => {
   useEffect(() => {
     setTimeout(() => {
       console.clear()
-    }, 10)
-  })
+    }, 100)
+  }, [])
 
   return (
     <div className={classes.mainContainer}>
