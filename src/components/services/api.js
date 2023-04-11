@@ -43,7 +43,7 @@ export const getLocation = async (props) => {
         params: { near: props },
         headers: headers['headers']
     };
-    return await axios.request(options).then(function (response) { return response['data']['context']['geo_bounds']['circle']['center'] }).catch(function (error) { return window.location.href('/noresults') });
+    return await axios.request(options).then(function (response) { return response['data']['context']['geo_bounds']['circle']['center'] }).catch(function () { return window.location.href('/noresults') });
 }
 
 export const getMapData = async (coords) => {

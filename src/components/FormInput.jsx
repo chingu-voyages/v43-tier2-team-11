@@ -4,6 +4,7 @@ import Search from "../assets/Search"
 import Discovery from "../assets/Discovery"
 import { getSearchData, getLocation } from "./services/api"
 import classes from "./FormInput.module.scss"
+import { useLocation } from "react-router-dom";
 
 const SUGGESTIONS = [
     { id: "og", location: "Australia", capital: "Canberra" },
@@ -20,6 +21,7 @@ const FormInput = ({ setLoading }) => {
     const [suggestedLocations, setSuggestedLocations] = useState([])
     const [checked, setChecked] = useState(false)
     const toggleChecked = () => setChecked(value => !value)
+    const pathname = useLocation().pathname;
 
     const getShopDataAndShopLocation = (cityName) => {
         setChecked(false)
@@ -32,7 +34,11 @@ const FormInput = ({ setLoading }) => {
             setSuggestedLocations(res)
         }).catch(() => {
             setSearchData([])
-            return navigateTo('/noresults')
+            if (pathname === '/noresults') {
+                return window.location.reload();
+            } else {
+                return navigateTo('/noresults')
+            }
         })
     }
 
@@ -85,7 +91,7 @@ const FormInput = ({ setLoading }) => {
             </div>
             {checked ?
                 <div className={classes['location__bx']}>
-                    <h2 className={classes['location__headLine']}>Suggested Locations</h2>
+                    <h3 className={classes['location__headLine']}>Suggested Locations</h3>
                     <hr className={classes['location__border']} />
                     <ul className={classes['location__ul']}>{suggestedLocationsList}</ul>
                 </div> : ''}
