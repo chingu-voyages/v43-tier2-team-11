@@ -1,6 +1,5 @@
 import axios from 'axios'
 import NoImage from "../../assets/illustrations/noimage.svg"
-// import { useNavigate } from 'react-router-dom';
 
 const headers = {
     headers: {
