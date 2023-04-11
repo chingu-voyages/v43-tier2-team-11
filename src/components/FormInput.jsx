@@ -37,6 +37,7 @@ const FormInput = ({ setLoading }) => {
             if (pathname === '/noResults') {
                 return window.location.reload();
             } else {
+                console.clear()
                 return navigateTo('/noResults')
             }
         })
