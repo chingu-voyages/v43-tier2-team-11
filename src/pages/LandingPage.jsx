@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import heroImg from "../assets/illustrations/1.svg";
@@ -7,6 +7,7 @@ import FormInput from "../components/FormInput";
 import Loading from "../components/Loading"
 
 const LandingPage = () => {
+  //STATE
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(false)
 

@@ -4,9 +4,13 @@ import App from "./App";
 import "./index.css";
 import "./scss/main.scss";
 
+//for mobile menu
+import ModalContextProvider from "./store/ModalContext";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <App />
+    <ModalContextProvider>
+      <App />
+    </ModalContextProvider>
   </React.StrictMode>
 );
