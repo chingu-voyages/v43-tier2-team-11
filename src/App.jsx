@@ -10,7 +10,7 @@ import Form from "./components/Form";
 
 import RestaurantList from "./pages/RestaurantList/RestaurantList";
 import NoResults from "./pages/NoResults";
-
+import NoResultsPage from "./pages/NoResultsPage";
 
 const router = createBrowserRouter([
   {
