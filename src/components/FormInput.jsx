@@ -32,6 +32,7 @@ const FormInput = ({ setLoading }) => {
             setSuggestedLocations(res)
         }).catch(() => {
             setSearchData([])
+            return navigateTo('/noresults')
         })
     }
 
