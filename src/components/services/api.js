@@ -29,8 +29,8 @@ const getShopData = async (props) => {
             } else {
                 shopData.push({ imagesUrl: dataArray['prefix'] + 'original' + dataArray['suffix'], shopId: shopId, geocodes: props['data']['results'][i]['geocodes'], location: props['data']['results'][i]['location'], name: props['data']['results'][i]['name'], categories: props['data']['results'][i]['categories'] })
             }
-        }).catch((error) => {
-            return error
+        }).catch(() => {
+            return window.location.href('/noResults')
         })
     }
     return shopData
@@ -43,7 +43,7 @@ export const getLocation = async (props) => {
         params: { near: props },
         headers: headers['headers']
     };
-    return await axios.request(options).then(function (response) { return response['data']['context']['geo_bounds']['circle']['center'] }).catch(function (error) { return console.error(error); });
+    return await axios.request(options).then(function (response) { return response['data']['context']['geo_bounds']['circle']['center'] }).catch(function () { return window.location.href('/noResults') });
 }
 
 export const getMapData = async (coords) => {
