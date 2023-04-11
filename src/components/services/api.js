@@ -9,7 +9,7 @@ const headers = {
     }
 }
 const LENGTH = 0
-const BASEURL = 'https://api.foursquare.com/v3/places'
+const BASEURL = import.meta.env.VITE_FOURSQUARE_BASE_URL
 let parameters = {
     query: "food",
     ll: "",
@@ -22,7 +22,7 @@ const getShopData = async (props) => {
     const shopData = []
     for (let i = LENGTH; i < props['data']['results']['length']; i++) {
         const shopId = props['data']['results'][i]['fsq_id']
-        await axios.get(`https://api.foursquare.com/v3/places/${shopId}/photos?limit=1&sort=POPULAR`, headers).then((res) => {
+        await axios.get(`${BASEURL}/${shopId}/photos?limit=1&sort=POPULAR`, headers).then((res) => {
             const dataArray = res['data'][LENGTH]
             if (res['data'].length === LENGTH) {
                 shopData.push({ imagesUrl: NoImage, shopId: shopId, geocodes: props['data']['results'][i]['geocodes'], location: props['data']['results'][i]['location'], name: props['data']['results'][i]['name'], categories: props['data']['results'][i]['categories'] })
@@ -39,18 +39,11 @@ const getShopData = async (props) => {
 export const getLocation = async (props) => {
     const options = {
         method: 'GET',
-        url: 'https://api.foursquare.com/v3/places/search',
+        url: `${BASEURL}/search`,
         params: { near: props },
         headers: headers['headers']
     };
-    const locations = await axios.request(options)
-        .then(function (response) {
-            return response['data']['context']['geo_bounds']['circle']['center']
-        })
-        .catch(function (error) {
-            return console.error(error);
-        });
-    return locations
+    return await axios.request(options).then(function (response) { return response['data']['context']['geo_bounds']['circle']['center'] }).catch(function (error) { return console.error(error); });
 }
 
 export const getMapData = async (coords) => {

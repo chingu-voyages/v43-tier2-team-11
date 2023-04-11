@@ -8,7 +8,7 @@ import Navigation from "./layout/Navigation"
 import Footer from "./layout/Footer"
 import fullStar from "../assets/rating_icons/full-star.svg"
 import halfStar from "../assets/rating_icons/half-star.svg"
-import { getMapData } from "./fetch/api"
+import { getMapData } from "./services/api"
 import classes from "./Map.module.scss"
 
 const Map = () => {

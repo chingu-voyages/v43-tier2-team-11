@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Search from "../assets/Search"
 import Discovery from "../assets/Discovery"
-import { getSearchData, getLocation } from "./fetch/api"
+import { getSearchData, getLocation } from "./services/api"
 import classes from "./FormInput.module.scss"
 
 const SUGGESTIONS = [
@@ -13,69 +13,46 @@ const SUGGESTIONS = [
     { id: "jpn", location: "Japan", capital: "tokyo" },
 ]
 
-const FormInput = (props) => {
-    const { setLoading } = props
-    const locationRef = useRef()
+const FormInput = ({ setLoading }) => {
+    let locationRef = useRef()
     const navigateTo = useNavigate()
     const [searchData, setSearchData] = useState([])
     const [suggestedLocations, setSuggestedLocations] = useState([])
-    const [openSuggestedLocations, setOpenSuggestedLocations] = useState(false)
-    const cityName = locationRef.current?.value
+    const [checked, setChecked] = useState(false)
+    const toggleChecked = () => setChecked(value => !value)
 
-    const onsearchHandler = () => {
-        if (cityName !== '') {
-            const searchObj = { cityName: locationRef.current?.value }
-            getSearchData(searchObj).then((res) => {
-                setSearchData(res)
-                setLoading(false)
-            })
-        } else {
-            return
-        }
+    const getShopDataAndShopLocation = (cityName) => {
+        setChecked(false)
+        setLoading(true)
+        getSearchData({ cityName: cityName }).then((res) => {
+            setSearchData(res)
+            setLoading(false)
+        })
+        getLocation(cityName).then((res) => {
+            setSuggestedLocations(res)
+        }).catch(() => {
+            setSearchData([])
+        })
     }
-    const getSuggestedLocations = () => {
-        if (cityName !== '') {
-            setOpenSuggestedLocations(false)
-            getLocation(cityName).then((res) => {
-                setSuggestedLocations(res)
-            }).catch(() => {
-                setSearchData([])
-            })
-        } else {
-            return
-        }
+
+    const getSearchDataHandler = () => {
+        const cityName = locationRef.current?.value
+        if (!cityName) return
+        getShopDataAndShopLocation(cityName)
     }
 
     useEffect(() => {
-        if (searchData['length'] !== 0 && suggestedLocations !== '') {
+        if (searchData.length !== 0 && suggestedLocations !== '') {
             navigateTo("/map", { state: { searchData, suggestedLocations } })
         }
     }, [searchData, suggestedLocations])
 
-    const suggesteKeyWordToggle = () => {
-        if (openSuggestedLocations) {
-            setOpenSuggestedLocations(false)
-        } else {
-            setOpenSuggestedLocations(true)
-        }
-    }
-
     const suggestedLocationsList = SUGGESTIONS.map((el) => {
         const moveToSuggestedCityHandler = () => {
-            setOpenSuggestedLocations(false)
-            const searchObj = { cityName: el.capital }
-            setLoading(true)
-            getSearchData(searchObj).then((res) => {
-                setSearchData(res)
-                setLoading(false)
-            })
-            getLocation(el.capital).then((res) => {
-                setSuggestedLocations(res)
-            }).catch(() => {
-                setSearchData([])
-            })
+            const cityName = el.capital
+            if (!cityName) return
+            getShopDataAndShopLocation(cityName)
         }
-
         return (
             <li key={el.id} onClick={moveToSuggestedCityHandler}>
                 <Discovery className={classes['location__discovery-icon']} />
@@ -88,26 +65,26 @@ const FormInput = (props) => {
         <section className={classes['form']}>
             <div className={classes['location']}>
                 <form className={classes['location__form']}>
-                    <div onClick={() => { onsearchHandler(); getSuggestedLocations() }}><Search className={classes['location__search-icon']} /></div>
+                    <div onClick={() => getSearchDataHandler()}><Search className={classes['location__search-icon']} /></div>
                     <input
                         type="text"
                         placeholder="Search for location..."
                         className={classes['location__input']}
                         ref={locationRef}
-                        onClick={suggesteKeyWordToggle}
+                        onClick={toggleChecked}
                         onKeyDown={(e) => {
                             if (e.key == 'Enter') {
                                 e.preventDefault()
-                                onsearchHandler(); getSuggestedLocations()
+                                getSearchDataHandler()
                             }
                         }
                         }
                     />
                 </form>
             </div>
-            {openSuggestedLocations ?
+            {checked ?
                 <div className={classes['location__bx']}>
-                    <h1 className={classes['location__title']}>Suggested Locations</h1>
+                    <h2 className={classes['location__headLine']}>Suggested Locations</h2>
                     <hr className={classes['location__border']} />
                     <ul className={classes['location__ul']}>{suggestedLocationsList}</ul>
                 </div> : ''}
