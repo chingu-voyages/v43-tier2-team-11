@@ -34,10 +34,10 @@ const FormInput = ({ setLoading }) => {
             setSuggestedLocations(res)
         }).catch(() => {
             setSearchData([])
-            if (pathname === '/noresults') {
+            if (pathname === '/noResults') {
                 return window.location.reload();
             } else {
-                return navigateTo('/noresults')
+                return navigateTo('/noResults')
             }
         })
     }

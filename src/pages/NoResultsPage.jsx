@@ -1,12 +1,22 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import classes from "./NoResultsPage.module.scss";
+import FormInput from "../components/FormInput"
+import Loading from "../components/Loading"
 
 const NoResultsPage = () => {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      console.clear()
+    }, 10)
+  })
+
   return (
     <div className={classes.mainContainer}>
       <Navigation />
+      {loading ? <Loading /> : ''}
       <div className={classes.contentContainer}>
         <img src="undraw_empty_re_opql.svg" alt="" />
         <div className={classes.content}>
@@ -15,14 +25,8 @@ const NoResultsPage = () => {
             We're sorry to say that there are currently no
             <br /> restaurants in the location you searched for.
           </div>
-          <div className={classes.searchBox}>
-            <span className={classes.icon}>
-              <img src="search.svg" alt="" />
-            </span>
-            <input
-              type="text"
-              placeholder="Please enter a location to find restaurants"
-            />
+          <div>
+            <FormInput setLoading={setLoading} />
           </div>
         </div>
       </div>
