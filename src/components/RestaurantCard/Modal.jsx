@@ -11,7 +11,7 @@ const Modal = (props) => {
           <div className={classes["modalContainer"]}>
             <img
               className={classes["closeButton"]}
-              src="./public/closeSquare.svg"
+              src="./closeSquare.svg"
               alt=""
               onClick={() => props.setShow(false)}
             ></img>
@@ -28,11 +28,11 @@ const Modal = (props) => {
                 <div className={classes["RestaurantRate"]}>
                   <div className={classes["rateReview"]}>3.5</div>
                   <div className={classes["rateStars"]}>
-                    <img src="./public/star.svg" alt="" />
-                    <img src="./public/star.svg" alt="" />
-                    <img src="./public/star.svg" alt="" />
-                    <img src="./public/star4.svg" alt="" />
-                    <img src="./public/star5.svg" alt="" />
+                    <img src="./star.svg" alt="" />
+                    <img src="./star.svg" alt="" />
+                    <img src="./star.svg" alt="" />
+                    <img src="./star4.svg" alt="" />
+                    <img src="./star5.svg" alt="" />
                   </div>
                   <div className={classes["reviewNumber"]}>(35)</div>
                 </div>
@@ -42,7 +42,7 @@ const Modal = (props) => {
                 <div className={classes["RestaurantAddress"]}>
                   <img
                     className={classes["addressIcon"]}
-                    src="./public/addressIcon.svg"
+                    src="./addressIcon.svg"
                     alt=""
                   ></img>
                   <div className={classes["addressDescription"]}>
@@ -53,7 +53,7 @@ const Modal = (props) => {
                 <div className={classes["RestaurantTel"]}>
                   <img
                     className={classes["telIcon"]}
-                    src="./public/telIcon.svg"
+                    src="./telIcon.svg"
                     alt=""
                   ></img>
                   <div className={classes["telDescription"]}>+6322436665</div>
