@@ -19,16 +19,13 @@ const Form = () => {
   const onSubmitLocationHandler = (e) => {
     e.preventDefault();
     const enteredLocation = locationRef.current.value;
-    console.log(enteredLocation);
   };
 
   const onCancelLocationHandler = () => {
-    console.log("canceled location!");
   };
 
   const suggestedLocationsList = DUMMY_SUGGESTIONS.map((el) => {
     const moveToSuggestedCityHandler = () => {
-      console.log("Selected location is " + el.location);
     };
 
     return (
