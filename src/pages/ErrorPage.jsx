@@ -1,5 +1,3 @@
-import Navigation from "../components/layout/Navigation";
-import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
 import classes from "./ErrorPage.module.scss";
 
