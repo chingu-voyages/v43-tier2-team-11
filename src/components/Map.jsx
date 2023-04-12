@@ -90,10 +90,6 @@ const Map = () => {
   const initialCenter = coords
   // - map end -
 
-  const toRestaurantList = () => {
-    navigateTo("/restaurantList", { state: { mapData, changedCoords } })
-  }
-
   return (
     <>
       {initialLoading ? <Loading /> : <section className={classes['map-contents']}>
@@ -119,7 +115,7 @@ const Map = () => {
           <section className={classes['restranBx']}>
             <div>
               <h2>Nearby&nbsp;Restaurants</h2>
-              <Link onClick={toRestaurantList}>See&nbsp;All</Link>
+              <Link to={"/restaurantList"} state={mapData}>See&nbsp;All</Link>
             </div>
             <ul className={classes['restran-list']}>
               {mapData.slice(0, 3)['map']((list, index) => (

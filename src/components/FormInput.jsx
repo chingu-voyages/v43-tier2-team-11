@@ -4,7 +4,7 @@ import Search from "../assets/Search"
 import Discovery from "../assets/Discovery"
 import { getSearchData, getLocation } from "./services/api"
 import classes from "./FormInput.module.scss"
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 
 const SUGGESTIONS = [
     { id: "og", location: "Australia", capital: "Canberra" },
@@ -21,7 +21,7 @@ const FormInput = ({ setLoading }) => {
     const [suggestedLocations, setSuggestedLocations] = useState([])
     const [checked, setChecked] = useState(false)
     const toggleChecked = () => setChecked(value => !value)
-    const pathname = useLocation().pathname;
+    const pathname = useLocation().pathname
 
     const getShopDataAndShopLocation = (cityName) => {
         setChecked(false)
@@ -37,8 +37,8 @@ const FormInput = ({ setLoading }) => {
             if (pathname === '/noResults') {
                 return window.location.reload();
             } else {
-                console.clear()
-                return navigateTo('/noResults')
+                navigateTo('/noResults')
+                window.location.reload()
             }
         })
     }
