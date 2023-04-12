@@ -20,13 +20,11 @@ const TravelAdvisor = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
-        // console.log(
-        //   response.data.data.AppPresentation_queryAppListV2[0].sections
-        // );
+       
+  
       })
       .catch(function (error) {
-        console.error(error);
+    
       });
   };
 
