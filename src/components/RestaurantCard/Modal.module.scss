@@ -50,6 +50,54 @@
   margin-left: 40px;
 }
 
+.rateStars {
+  display: block !important;
+}
+
+.rateStars_responsive {
+  display: none !important;
+}
+
+.RestaurantPriceRange {
+  display: block !important;
+}
+
+.RestaurantPriceRange_responsive {
+  display: none !important;
+}
+
+.RestaurantAddress {
+  display: block !important;
+}
+
+.RestaurantAddress_responsive {
+  display: none !important;
+}
+
+.telDescription {
+  margin-top: 2px;
+}
+
+.TelImage {
+  display: block !important;
+}
+
+.TelImage_responsive {
+  display: none !important;
+}
+
+.summaryDescription {
+  margin-bottom: 3px;
+}
+
+.SummaryImage {
+  display: block !important;
+}
+
+.SummaryImage_responsive {
+  display: none !important;
+}
+
 .RestaurantName {
   font-family: "Urbanist";
   font-style: normal;
@@ -68,6 +116,10 @@
   padding-bottom: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.RestaurantLocation {
+  display: flex;
 }
 
 .RestaurantAddress {
@@ -99,7 +151,6 @@
 .RestaurantSummary {
   display: flex;
   align-items: center;
-
   border-bottom: 1px solid #383a47;
   padding-bottom: 5px;
   margin-top: 10px;
@@ -128,15 +179,132 @@
   border: none;
 }
 
+.backButton {
+  display: none !important;
+}
+
 @media (max-width: 600px) {
   .content {
     width: 100%;
-    height: 70%;
+    height: 55%;
     background: #98a7bf;
     color: #ffffff;
+    border-radius: 30px;
+  }
+
+  .closeButton {
+    display: none;
+  }
+
+  .RestaurantName {
+    margin-top: 20px;
   }
 
   .leftPicture {
     display: none;
+  }
+
+  .rateStars {
+    display: none !important;
+  }
+
+  .rateStars_responsive {
+    display: block !important;
+  }
+
+  .RestaurantPriceRange {
+    display: none !important;
+    border-bottom: 1px solid white;
+  }
+
+  .RestaurantPriceRange_responsive {
+    display: block !important;
+    border-bottom: 1px solid white;
+    margin-top: 12px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+  }
+
+  .RestaurantAddress {
+    display: none !important;
+    border-bottom: 1px solid white;
+  }
+
+  .RestaurantAddress_responsive {
+    display: block !important;
+  }
+
+  .RestaurantTel {
+    display: flex;
+    align-items: center;
+  }
+
+  .TelImage {
+    display: none !important;
+    border-bottom: 1px solid white;
+  }
+
+  .TelImage_responsive {
+    display: block !important;
+  }
+
+  .telDescription {
+    margin-top: 3px;
+  }
+
+  .SummaryImage {
+    display: none !important;
+    border-bottom: 1px solid white;
+  }
+
+  .SummaryImage_responsive {
+    display: block !important;
+  }
+
+  .summaryDescription {
+    margin-bottom: 3px;
+  }
+
+  .save {
+    text-align: center;
+  }
+
+  .saveButton {
+    width: 366px;
+    height: 50px;
+    left: 403px;
+    top: 304px;
+    background: #667080;
+    border-radius: 6px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+  }
+
+  .RestaurantSummary {
+    border-bottom: 1px solid white;
+  }
+
+  .backButton {
+    display: block !important;
+    text-align: right;
+    margin-right: 30px;
+    transform: translate(0px, -100px);
+  }
+
+  .navBack {
+    background-color: white;
+    color: #ff844b;
+    padding: 1em;
+    border-radius: 13.7px;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
   }
 }
