@@ -1,12 +1,13 @@
 import cardDetails from "./cardDetails";
 import Navigation from "../../components/layout/Navigation";
 import Footer from "../../components/layout/Footer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Modal from "../../components/RestaurantCard/Modal";
 import { useState } from "react";
 
 const RestaurantList = () => {
   const [show, setShow] = useState(false);
+  const { state } = useLocation([]);
 
   const restaurantDetails = cardDetails.map((data) => (
     <div className="restaurantlist__optionCard" key={data.id}>
