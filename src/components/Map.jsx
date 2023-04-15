@@ -10,7 +10,6 @@ import fullStar from "../assets/rating_icons/full-star.svg"
 import halfStar from "../assets/rating_icons/half-star.svg"
 import { getMapData } from "./services/api"
 import classes from "./Map.module.scss"
-import { useNavigate } from "react-router-dom"
 
 const Map = () => {
   const LENGTHSIZE = 35
