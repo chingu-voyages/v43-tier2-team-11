@@ -54,24 +54,12 @@
   display: block !important;
 }
 
-.rateStars_responsive {
-  display: none !important;
-}
-
 .RestaurantPriceRange {
   display: block !important;
 }
 
-.RestaurantPriceRange_responsive {
-  display: none !important;
-}
-
 .RestaurantAddress {
   display: block !important;
-}
-
-.RestaurantAddress_responsive {
-  display: none !important;
 }
 
 .telDescription {
@@ -80,10 +68,6 @@
 
 .TelImage {
   display: block !important;
-}
-
-.TelImage_responsive {
-  display: none !important;
 }
 
 .summaryDescription {
@@ -186,10 +170,13 @@
 @media (max-width: 600px) {
   .content {
     width: 100%;
-    height: 55%;
-    background: #98a7bf;
-    color: #ffffff;
+    height: 80%;
+
     border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin-top: 80px;
   }
 
   .closeButton {
@@ -197,41 +184,11 @@
   }
 
   .RestaurantName {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .leftPicture {
     display: none;
-  }
-
-  .rateStars {
-    display: none !important;
-  }
-
-  .rateStars_responsive {
-    display: block !important;
-  }
-
-  .RestaurantPriceRange {
-    display: none !important;
-    border-bottom: 1px solid white;
-  }
-
-  .RestaurantPriceRange_responsive {
-    display: block !important;
-    border-bottom: 1px solid white;
-    margin-top: 12px;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-  }
-
-  .RestaurantAddress {
-    display: none !important;
-    border-bottom: 1px solid white;
-  }
-
-  .RestaurantAddress_responsive {
-    display: block !important;
   }
 
   .RestaurantTel {
@@ -239,26 +196,8 @@
     align-items: center;
   }
 
-  .TelImage {
-    display: none !important;
-    border-bottom: 1px solid white;
-  }
-
-  .TelImage_responsive {
-    display: block !important;
-  }
-
   .telDescription {
     margin-top: 3px;
-  }
-
-  .SummaryImage {
-    display: none !important;
-    border-bottom: 1px solid white;
-  }
-
-  .SummaryImage_responsive {
-    display: block !important;
   }
 
   .summaryDescription {
@@ -267,28 +206,6 @@
 
   .save {
     text-align: center;
-  }
-
-  .saveButton {
-    width: 366px;
-    height: 50px;
-    left: 403px;
-    top: 304px;
-    background: #667080;
-    border-radius: 6px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    letter-spacing: 1.25px;
-    text-transform: uppercase;
-    color: #ffffff;
-    border: none;
-  }
-
-  .RestaurantSummary {
-    border-bottom: 1px solid white;
   }
 
   .backButton {

@@ -1,3 +1,4 @@
+import Footer from "../layout/Footer";
 import classes from "./Modal.module.scss";
 
 const Modal = (props) => {
@@ -44,21 +45,13 @@ const Modal = (props) => {
                     <img src="./star4.svg" alt="" />
                     <img src="./star5.svg" alt="" />
                   </div>
-                  <div className={classes["rateStars_responsive"]}>
-                    <img src="./star_white.svg" alt="" />
-                    <img src="./star_white.svg" alt="" />
-                    <img src="./star_white.svg" alt="" />
-                    <img src="./star_white.svg" alt="" />
-                    <img src="./star_white_transparent.svg" alt="" />
-                  </div>
+
                   <div className={classes["reviewNumber"]}>(35)</div>
                 </div>
                 <div className={classes["RestaurantPriceRange"]}>
                   <img src="./public/priceRange.svg" alt="" />
                 </div>
-                <div className={classes["RestaurantPriceRange_responsive"]}>
-                  <img src="./public/priceRange_white.svg" alt="" />
-                </div>
+
                 <div className={classes["RestaurantLocation"]}>
                   <div className={classes["RestaurantAddress"]}>
                     <img
@@ -67,13 +60,7 @@ const Modal = (props) => {
                       alt=""
                     ></img>
                   </div>
-                  <div className={classes["RestaurantAddress_responsive"]}>
-                    <img
-                      className={classes["addressIcon"]}
-                      src="./addressIcon_white.svg"
-                      alt=""
-                    ></img>
-                  </div>
+
                   <div className={classes["addressDescription"]}>
                     810 Benavidez Street, Binondo, Manila, 1000 Metro Manila,
                     Philippines{" "}
@@ -87,13 +74,7 @@ const Modal = (props) => {
                       alt=""
                     ></img>
                   </div>
-                  <div className={classes["TelImage_responsive"]}>
-                    <img
-                      className={classes["telIcon"]}
-                      src="./tellIcon_white.svg"
-                      alt=""
-                    ></img>
-                  </div>
+
                   <div className={classes["telDescription"]}>+6322436665</div>
                 </div>
                 <div className={classes["RestaurantSummary"]}>
@@ -104,13 +85,7 @@ const Modal = (props) => {
                       alt=""
                     ></img>
                   </div>
-                  <div className={classes["SummaryImage_responsive"]}>
-                    <img
-                      className={classes["summaryIcon"]}
-                      src="./summaryIcon_white.svg"
-                      alt=""
-                    ></img>
-                  </div>
+
                   <div className={classes["summaryDescription"]}>
                     Fast Food, Dim Sum, Filipino
                   </div>
