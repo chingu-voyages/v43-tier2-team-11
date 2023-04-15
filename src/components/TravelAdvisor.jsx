@@ -24,7 +24,7 @@ const TravelAdvisor = () => {
   
       })
       .catch(function (error) {
-    
+        console.error(error);
       });
   };
 
