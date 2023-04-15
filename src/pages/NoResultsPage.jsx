@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import classes from "./NoResultsPage.module.scss";
@@ -7,11 +7,6 @@ import Loading from "../components/Loading"
 
 const NoResultsPage = () => {
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
-    setTimeout(() => {
-      console.clear()
-    }, 100)
-  }, [])
 
   return (
     <div className={classes.mainContainer}>
