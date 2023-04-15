@@ -47,12 +47,10 @@ const Navigation = () => {
   const { isOpen, openModal } = useContext(ModalContext);
 
   useEffect(() => {
-    console.log(isOpen);
   }, [isOpen]);
 
   const openMenuHandler = () => {
     openModal();
-    console.log("small menu opened");
   };
 
   //MQ

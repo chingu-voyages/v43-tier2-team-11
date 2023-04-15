@@ -9,7 +9,6 @@ const NoResultsPage = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setTimeout(() => {
-      console.clear()
     }, 100)
   }, [])
 

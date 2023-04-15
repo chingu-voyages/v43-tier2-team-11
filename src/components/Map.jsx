@@ -10,6 +10,7 @@ import fullStar from "../assets/rating_icons/full-star.svg"
 import halfStar from "../assets/rating_icons/half-star.svg"
 import { getMapData } from "./services/api"
 import classes from "./Map.module.scss"
+import { useNavigate } from "react-router-dom"
 
 const Map = () => {
   const LENGTHSIZE = 35
@@ -90,10 +91,6 @@ const Map = () => {
   const initialCenter = coords
   // - map end -
 
-  const toRestaurantList = () => {
-    navigateTo("/restaurantList", { state: { mapData, changedCoords } })
-  }
-
   return (
     <>
       {initialLoading ? <Loading /> : <section className={classes['map-contents']}>
@@ -119,7 +116,7 @@ const Map = () => {
           <section className={classes['restranBx']}>
             <div>
               <h2>Nearby&nbsp;Restaurants</h2>
-              <Link onClick={toRestaurantList}>See&nbsp;All</Link>
+              <Link to="/restaurantList" state={{mapData}}>See&nbsp;All</Link>
             </div>
             <ul className={classes['restran-list']}>
               {mapData.slice(0, 3)['map']((list, index) => (

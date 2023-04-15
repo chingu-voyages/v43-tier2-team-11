@@ -46,5 +46,13 @@ export default [
         role: "Frontend Developer", 
         linkedin: "#",
         github: "https://github.com/YuriOda"
+    },
+    {
+        id: 7,
+        profilePic: "/profiles/neko.jpg",
+        name: "@Nekohacks",
+        role: "Frontend Developer", 
+        linkedin: "#",
+        github: "https://github.com/TKS9988"
     }
 ] 
