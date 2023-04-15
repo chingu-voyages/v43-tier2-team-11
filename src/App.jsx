@@ -6,8 +6,6 @@ import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import MapPage from "./pages/MapPage";
-import Form from "./components/Form";
-
 import RestaurantList from "./pages/RestaurantList/RestaurantList";
 import NoResultsPage from "./pages/NoResultsPage";
 
@@ -27,10 +25,6 @@ const router = createBrowserRouter([
       {
         path: "/map",
         element: <MapPage />,
-      },
-      {
-        path: "/form",
-        element: <Form />,
       },
       {
         path: "/restaurantList",
