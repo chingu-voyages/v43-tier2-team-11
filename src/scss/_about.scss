@@ -115,6 +115,13 @@
       padding-right: 1em;
     }
   }
+  &__avatar-contianer {
+    position: relative;
+  }
+  &__country {
+    position: absolute;
+    transform: translateX(-2.2rem);
+  }
 
   &__team {
     padding: 6em 0;
@@ -130,7 +137,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 70%;
-    margin: 2em auto;
+    margin: 4rem auto;
   }
 
   @media (max-width: 600px) {
@@ -139,6 +146,10 @@
     &__cardContainer,
     &__container {
       width: 90%;
+    }
+
+    &__country {
+      transform: translateX(-1.3rem);
     }
 
     &__card {

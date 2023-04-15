@@ -12,7 +12,10 @@ import linkedinIcon from "../assets/aboutIcons/linkedin.svg";
 const About = () => {
   const profileElement = profiledata.map((info) => (
     <div className="about__profileCard" key={info.id}>
-      <img src={info.profilePic} alt="" className="about__avatar" />
+      <div className="about__avatar-container">
+        <img src={info.profilePic} alt="" className="about__avatar" />
+        <img src={info.country} alt="" className="about__country" />
+      </div>
       <h5>{info.name}</h5>
       <p>{info.role}</p>
       <a href={info.github} target="_blank">
