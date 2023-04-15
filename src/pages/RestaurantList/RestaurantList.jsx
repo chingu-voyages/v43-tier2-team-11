@@ -9,7 +9,6 @@ const RestaurantList = (props) => {
   const [selectedData, setSelectedData] = useState(null)
   const location = useLocation()
   const propsData = location.state
-  // console.log(propsData.mapData)
 
   const dataP = propsData.mapData.map(info => (
     <div className="restaurantlist__optionCard" key={info.shopId} onClick={() => {
