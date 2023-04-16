@@ -1,16 +1,16 @@
-import Navigation from "../components/layout/Navigation";
-import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
 import classes from "./ErrorPage.module.scss";
+import PageNotFound from "../assets/illustrations/404icon.svg";
 
 const ErrorPage = () => {
   const handleClick = () => {
-    window.location.href = "http://localhost:5173/form";
+    window.location.href = "/";
   };
+
   return (
     <div className={classes.errorPage}>
       <div className={classes.navbar}>
-        <img src=".././4foodies.svg" />
+        <img src=".././4foodies.svg" alt="logo" />
         <div className={classes.links}>
           <Link to="/" className={classes["links__home"]}>
             HOME
@@ -21,7 +21,7 @@ const ErrorPage = () => {
         </div>
       </div>
       <div className={classes.descriptions}>
-        <img src=".././public/404icon.svg" alt="" />
+        <img src={PageNotFound} alt="Oops! Page Not Found" />
         <div className={classes.title}>Oops! Page Not Found</div>
         <br />
         <div className={classes.text}>
