@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Footer from "./../components/layout/Footer";
+import Navigation from "./../components/layout/Navigation";
 import classes from "./ErrorPage.module.scss";
 import PageNotFound from "../assets/illustrations/404icon.svg";
 

@@ -96,7 +96,6 @@ const Map = () => {
   const [checked, setChecked] = useState(false)
   const toggleChecked = () => setChecked(value => !value);
   const [restranData, setRestranData] = useState([])
-  // console.log(restranData)
 const showModal = (props) => {
   toggleChecked()
   setRestranData(props)
