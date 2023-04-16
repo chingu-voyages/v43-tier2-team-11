@@ -1,4 +1,3 @@
-import Footer from "../layout/Footer";
 import classes from "./Modal.module.scss";
 
 const Modal = (props) => {
@@ -29,13 +28,13 @@ const Modal = (props) => {
             <div className={classes["main"]}>
               <img
                 className={classes["leftPicture"]}
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                src={props.data.imagesUrl}
                 alt=""
               ></img>
               <div className={classes["rightContents"]}>
-                <div className={classes["RestaurantName"]}>
-                  Wai Ying Fastfood
-                </div>
+                <h3 className={classes["RestaurantName"]}>
+                  {props.data.name}
+                </h3>
                 <div className={classes["RestaurantRate"]}>
                   <div className={classes["rateReview"]}>3.5</div>
                   <div className={classes["rateStars"]}>
@@ -61,34 +60,27 @@ const Modal = (props) => {
                     ></img>
                   </div>
 
-                  <div className={classes["addressDescription"]}>
-                    810 Benavidez Street, Binondo, Manila, 1000 Metro Manila,
-                    Philippines{" "}
-                  </div>
+                  <p className={classes["addressDescription"]}>
+                    {props.data.location.formatted_address}{" "}
+                  </p>
                 </div>
                 <div className={classes["RestaurantTel"]}>
-                  <div className={classes["TelImage"]}>
-                    <img
-                      className={classes["telIcon"]}
-                      src="./telIcon.svg"
-                      alt=""
-                    ></img>
-                  </div>
-
-                  <div className={classes["telDescription"]}>+6322436665</div>
+                  <img
+                    className={classes["telIcon"]}
+                    src="./public/telIcon.svg"
+                    alt=""
+                  ></img>
+                  <p className={classes["telDescription"]}>{props.data.location.postcode}</p>
                 </div>
                 <div className={classes["RestaurantSummary"]}>
-                  <div className={classes["SummaryImage"]}>
-                    <img
-                      className={classes["summaryIcon"]}
-                      src="./summaryIcon.svg"
-                      alt=""
-                    ></img>
-                  </div>
-
-                  <div className={classes["summaryDescription"]}>
-                    Fast Food, Dim Sum, Filipino
-                  </div>
+                  <img
+                    className={classes["summaryIcon"]}
+                    src="./public/summaryIcon.svg"
+                    alt=""
+                  ></img>
+                  <p className={classes["summaryDescription"]}>
+                    {props.data.location.locality}
+                  </p>
                 </div>
                 <div className={classes["save"]}>
                   <button className={classes["saveButton"]}>
