@@ -50,3 +50,15 @@
 .error-page-info button:active {
   background-color: #eb8531;
 }
+
+.error-page-container img {
+  width: 343px;
+  height: 228px;
+}
+
+@media screen and (min-width: 765px) {
+  .error-page-container img {
+    width: 680px;
+    height: 452px;
+  }
+}
