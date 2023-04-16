@@ -55,8 +55,8 @@ export default [
     },
     {
       id: 7,
-      profilePic: "/profiles/neko.jpg",
-      name: "@Nekohacks",
+      profilePic: "/profiles/neko.jpeg",
+      name: "@nekohack",
       role: "Frontend Developer", 
       linkedin: "#",
       github: "https://github.com/TKS9988",
