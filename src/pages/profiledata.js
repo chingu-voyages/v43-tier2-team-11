@@ -60,6 +60,6 @@ export default [
       role: "Frontend Developer", 
       linkedin: "#",
       github: "https://github.com/TKS9988",
-      country: "/flag-south-korea.svg",
+      country: "/flag-japan.svg",
   },
 ];
