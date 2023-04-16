@@ -9,17 +9,6 @@ const ErrorPage = () => {
 
   return (
     <div className={classes.errorPage}>
-      <div className={classes.navbar}>
-        <img src=".././4foodies.svg" alt="logo" />
-        <div className={classes.links}>
-          <Link to="/" className={classes["links__home"]}>
-            HOME
-          </Link>
-          <Link to="/about" className={classes["links__aboutUs"]}>
-            ABOUT US
-          </Link>
-        </div>
-      </div>
       <div className={classes.descriptions}>
         <img src={PageNotFound} alt="Oops! Page Not Found" />
         <div className={classes.title}>Oops! Page Not Found</div>
@@ -32,9 +21,6 @@ const ErrorPage = () => {
         <button className={classes.button} onClick={handleClick}>
           go back to home
         </button>
-      </div>
-      <div className={classes.footer}>
-        Copyright © 2023 4Foodies. All rights reserved
       </div>
     </div>
   );
