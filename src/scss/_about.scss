@@ -1,151 +1,177 @@
 .about {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+  }
+
+  h2,
+  h3 {
+    font-size: 3.4rem;
+    color: $color-secondary-blue;
+    text-align: center;
+  }
+
+  &__topInfo {
+    width: 40%;
+    text-align: center;
+    margin: 5rem auto;
+    font-family: $font-primary;
+
+    p {
+      color: $color-secondary-dark;
+      width: 80%;
+      margin: 0.5em auto 2rem;
+      padding-bottom: 0.5em;
+    }
 
     a {
-        text-decoration: none;
+      background-color: $color-primary-orange;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      color: white;
+      font-family: $font-secondary;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      letter-spacing: 1.25px;
     }
 
-    h2, h3 {
-        font-size: 3.4rem;
-        color: $color-secondary-blue;
-        text-align: center;
-    }
-    
-    &__topInfo {
-        width: 40%;
-        text-align: center;
-        margin: 2.2em auto 1em;
-        font-family: $font-primary;
-
-        p {
-            color: $color-secondary-dark;
-            width: 80%;
-            margin: .5em auto 1em;
-            padding-bottom: .5em;
-        }
-
-        a {
-            background-color: $color-primary-orange;
-            text-transform: uppercase;
-            padding: .8em 2em;
-            color: white;
-            font-family: $font-secondary;
-            font-weight: 600;
-            font-size: .9rem;
-        }
+    a:hover {
+      background-color: #ff9c4b;
+      box-shadow: 0px 4px 4px rgba(255, 156, 75, 0.25);
     }
 
-    &__image {
-        width: 80%;
-        margin: 3em auto;
+    a:active {
+      background-color: #eb8531;
+    }
+  }
 
-        img {
-            width: 100%;
-        }
+  &__image {
+    width: 80%;
+    margin: 3em auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__midContent {
+    background-color: white;
+    padding: 6em 0;
+  }
+
+  &__cardContainer {
+    width: 60%;
+    margin: 4rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__card {
+    width: 48%;
+    padding: 2em 1em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 13px rgba(1, 89, 148, 0.16);
+
+    img {
+      width: 40px;
+      height: 30px;
     }
 
-    &__midContent {
-        background-color: white;
-        padding: 6em 0;
+    p {
+      color: $color-secondary-dark;
+      width: 80%;
+      margin: 0 auto;
     }
 
-    &__cardContainer {
-        width: 60%;
-        margin: 2em auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    h4 {
+      color: $color-secondary-blue;
+      font-size: 1.2rem;
+      margin: 0.5em 0;
+    }
+  }
+
+  &__profileCard {
+    width: 31%;
+    margin-bottom: 2em;
+    text-align: center;
+
+    h5 {
+      // font-weight: bolder;
+      font-family: $font-primary;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: $color-secondary-blue;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      padding-right: 1em;
+    }
+  }
+  &__avatar-contianer {
+    position: relative;
+  }
+  &__country {
+    position: absolute;
+    transform: translateX(-2.2rem);
+  }
+
+  &__team {
+    padding: 6em 0;
+  }
+
+  &__avatar {
+    width: 50%;
+    border-radius: 50%;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: 4rem auto;
+  }
+
+  @media (max-width: 600px) {
+    &__topInfo,
+    &__image,
+    &__cardContainer,
+    &__container {
+      width: 90%;
+    }
+
+    &__country {
+      transform: translateX(-1.3rem);
     }
 
     &__card {
-        width: 47%;
-        padding: 2em 1em;
-        text-align: center;
-        margin-bottom: 3em;
-        box-shadow: 2px 2px 2px 4px $color-primary-blue;
-
-        img {
-            width: 40px;
-            height: 30px;
-        }
-
-        p {
-            color: $color-secondary-dark;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        h4 {
-            color: $color-secondary-blue;
-            font-size: 1.2rem;
-            margin: .5em 0;
-        }
+      width: 100%;
     }
 
     &__profileCard {
-        width: 31%;
-        margin-bottom: 2em;
-        text-align: center;
-
-        h5 {
-            font-family: $font-primary;
-            font-size: 1.2rem;
-        }
-
-        p {
-            color: $color-secondary-blue;
-            font-size: 1rem;
-            margin: .2em 0;
-        }
-
-        a {
-            padding-right: 1em;
-        }
+      width: 48%;
     }
 
-    &__team {
-        padding: 6em 0;   
+    &__topInfo {
+      margin-top: 3em;
     }
 
-    &__avatar {
-        width: 50%;
-        border-radius: 50%;
+    h2,
+    h3 {
+      font-size: 2.5rem;
     }
 
-    &__container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 70%;
-        margin:  2em auto;
+    &__cardContainer {
+      flex-direction: column;
     }
-
-    @media(max-width: 600px) {
-        &__topInfo, &__image,
-        &__cardContainer, 
-        &__container {
-            width: 90%;
-        }
-
-        &__card {
-            width: 100%;
-        }
-
-        &__profileCard {
-            width: 48%;
-        }
-
-        &__topInfo {
-            margin-top: 3em;
-        }
-
-        h2, h3 {
-            font-size: 2.5rem;
-        }
-
-        &__cardContainer {
-            flex-direction: column;
-        }
-    }
+  }
 }

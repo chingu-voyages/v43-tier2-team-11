@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ import fullStar from "../assets/rating_icons/full-star.svg";
 import halfStar from "../assets/rating_icons/half-star.svg";
 import { getMapData } from "./services/api";
 import classes from "./Map.module.scss";
+import locationSvg from "../assets/iconly_2/Light/Location.svg";
+import CategorySvg from "../assets/iconly_2/Light/Category.svg";
 
 const Map = () => {
   const LENGTHSIZE = 35;
@@ -90,6 +92,16 @@ const Map = () => {
   const initialCenter = coords;
   // - map end -
 
+  // showModal
+  const [checked, setChecked] = useState(false)
+  const toggleChecked = () => setChecked(value => !value);
+  const [restranData, setRestranData] = useState([])
+  // console.log(restranData)
+const showModal = (props) => {
+  toggleChecked()
+  setRestranData(props)
+}
+
   return (
     <>
       {initialLoading ? <Loading /> : <section className={classes['map-contents']}>
@@ -119,7 +131,7 @@ const Map = () => {
             </div>
             <ul className={classes['restran-list']}>
               {mapData.slice(0, 3)['map']((list, index) => (
-                <li key={index} className={classes['restran-list__detail']}>
+                <li key={index} className={classes['restran-list__detail']} onClick={() => showModal(list)}>
                   <span className={classes['restranBx__imgBx']}>
                     <img src={list['imagesUrl']} alt={list['name']} />
                   </span>
@@ -134,6 +146,31 @@ const Map = () => {
             </ul>
           </section>
         </section>
+        {checked ? <div className={classes['modal']}>
+            <section className={classes['inner']}>
+            <button className={classes['inner__closeBtn']} onClick={toggleChecked}>✖️</button>
+            <div className={classes['inner__contentsBx']}>
+            <div className={classes['imageBx']}>
+              <img src={restranData['imagesUrl']} alt={restranData['name']} />
+              </div>
+              <div className={classes['inner__contents']}>
+                <h2>{restranData['name']}</h2>
+                <p>3.5<img src={fullStar} /><img src={fullStar} /><img src={fullStar} /><img src={halfStar} />&#40;101&#41;</p>
+                <p className={classes['pp']}>₱₱</p>
+                <div className={classes['inner__bx']}>
+                <p><img src={locationSvg} />{restranData['location']['formatted_address']}</p>
+                <p><img src={CategorySvg} />
+                {restranData.categories.length > 0 ? restranData.categories.map((list, index) => (
+                  <React.Fragment key={index}>{list.name}</React.Fragment>
+                )): ''}
+                </p>
+                </div>
+                <button className={classes['inner__button']}>Save to My List</button>
+              </div>
+            </div>
+      </section>
+      </div> : 
+      ''}
         <Footer />
       </section>
       }
